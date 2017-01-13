@@ -20,6 +20,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	int currentState = MENU_STATE;
 	Font titleFont;
 	Rocketship rs = new Rocketship(250,700,50,50);
+	ObjectManager man = new ObjectManager();
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -37,6 +38,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	public GamePanel(){
 		timer = new Timer(1000/60, this);
 		titleFont = new Font("Arial",Font.PLAIN,48);
+		man.addObject(rs);
 	}
 	
 	public void startGame(){
@@ -78,6 +80,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		else if(e.getKeyCode()==KeyEvent.VK_S){
 			rs.moveDown=true;
 		}
+		else if(e.getKeyCode()==KeyEvent.VK_D){
+			rs.moveRight=true;
+		}
+		if(e.getKeyCode()==KeyEvent.VK_SPACE){
+			man.addObject(new Projectile(rs.x+20,rs.y+20,10,10));
+		}
 	}
 
 	@Override
@@ -86,16 +94,30 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 		if(e.getKeyCode()==KeyEvent.VK_W){
 			rs.moveUp=false;
 		}
-		else if(e.getKeyCode()==KeyEvent.VK_A){
+		if(e.getKeyCode()==KeyEvent.VK_A){
 			rs.moveLeft=false;
 		}
+		if(e.getKeyCode()==KeyEvent.VK_S){
+			rs.moveDown=false;
+		}
+		if(e.getKeyCode()==KeyEvent.VK_D){
+			rs.moveRight=false;
+		}
+		
 	}
 	
 	private void updateMenuState(){
 		
 	}
 	private void updateGameState(){
-		rs.update();
+		man.update();
+		man.manageEnemies();
+		man.checkCollision();
+		if(rs.isAlive==false){
+			currentState=END_STATE;
+			man.reset();
+			rs=new Rocketship(250,700,50,50);
+		}
 	}
 	private void updateEndState(){
 		
@@ -110,7 +132,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	private void drawGameState(Graphics g){
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT);
-		rs.draw(g);
+		man.draw(g);
 	}
 	private void drawEndState(Graphics g){
 		g.setColor(Color.RED);
