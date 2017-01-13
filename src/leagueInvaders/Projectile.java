@@ -1,6 +1,5 @@
 package leagueInvaders;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 public class Projectile extends GameObject{
@@ -24,8 +23,7 @@ public class Projectile extends GameObject{
 	}
 	
 	public void draw(Graphics g){
-		g.setColor(Color.RED);
-		g.fillRect(x, y, width, height);
+		g.drawImage(GamePanel.bulletImg, x, y, width, height, null);
 	}
 	
 }

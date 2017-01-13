@@ -1,9 +1,9 @@
 package boomboom;
 public class Drone extends Weapon {
-	String name = "Drone";
-	String desc = "A dart-equipped drone given to you by The8.\n"
-			+ "It's made of a sturdy metal and painted a matte black.\n"
-			+ "The motor makes a low whirr when you turn it on.";
+	String name = "remote-control drone";
+	String desc = "a dart-equipped drone given to you by the8.\n"
+			+ "it's made of a sturdy metal you think is titanium and painted a matte black.\n"
+			+ "the motor makes a low whirr when you turn it on.";
 	int damage = 10;
 	int worth = 300;
 }

@@ -7,9 +7,9 @@ public class Weapon extends Item{
 	int damage;
 	
 	public void printDesc(){
-		System.out.println("Item: "+this.name+"\n"
-				+ "Description: "+this.desc+"\n"
-				+ "Damage: "+this.damage
-				+ "Worth: $"+this.worth);
+		System.out.println("item: "+this.name+"\n"
+				+ "description: "+this.desc+"\n"
+				+ "damage: "+this.damage
+				+ "worth: $"+this.worth);
 	}
 }
