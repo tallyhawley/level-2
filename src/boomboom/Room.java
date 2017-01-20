@@ -3,6 +3,6 @@ package boomboom;
 public class Room {
 		int x;
 		int y;
-		int desc;
+		String desc;
 		int dir;
 }
