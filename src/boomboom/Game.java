@@ -1,13 +1,9 @@
 package boomboom;
+
 import java.util.Scanner;
-/*Keith was Here*/
+
 public class Game {
 	
-	Room tocoups;
-	Room towoozi;
-	Room todk;
-	Room todino;
-	Room tokwan;
 	Room directory;
 	Room elevator;
 	
@@ -41,6 +37,7 @@ public class Game {
 		String ans = scan.nextLine();
 		System.out.println("you can't go to "+ans+", "+player.name+". can't you see? you're meant to be here.");
 	}
+	
 	@SuppressWarnings("unused")
 	private static void initRooms(){
 		NPCRoom coups = new NPCRoom(3,5,"the office you enter is dim. the walls are lined by bookshelves\n"
@@ -57,9 +54,18 @@ public class Game {
 				+ "the inside is lined with screens and a boy who can't be older than\n"
 				+ "fifteen sits, monitoring them. there's a half-eaten donut and a coffee\n"
 				+ "sitting on the desk next to him.\n"
-				+ "suddenly he whips around",2);
+				+ "suddenly he whips around in his chair, glasses slipping down his\n"
+				+ "nose in his hurry. at a closer look, he looks closer to twenty.\n"
+				+ "you guess this is woozi.\n"
+				+ "what will you do?",2);
 		Room towoozi = new Room(5,5,"",13);
-		NPCRoom dk = new NPCRoom(6,7,"",3);
+		NPCRoom dk = new NPCRoom(6,7,"as soon as you enter this room, you're starting to get sick of\n"
+				+ "the map-covered-walls aesthetic. there's somebody working at a desk\n"
+				+ "on the other side of the room, natural light from the massive window\n"
+				+ "washing out the room and giving everything a dusty look. or maybe it's\n"
+				+ "just dusty like that.\n"
+				+ "the guy turns around and smiles, eyes crinkling at the corners.\n"
+				+ "what will you do?",3);
 		Room todk = new Room(7,7,"",12);
 		NPCRoom kwan = new NPCRoom(9,1,"",4);
 		Room tokwan = new Room(8,1,"",10);
