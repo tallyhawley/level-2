@@ -3,14 +3,6 @@ import java.util.Scanner;
 /*Keith was Here*/
 public class Game {
 	
-	NPCRoom woozi;
-	NPCRoom dk;
-	NPCRoom the8;
-	NPCRoom kwan;
-	NPCRoom dino;
-	Room lasers;
-	Room turnlas;
-	Room lasend;
 	Room tocoups;
 	Room towoozi;
 	Room todk;
@@ -22,17 +14,9 @@ public class Game {
 	public static void main(String[] args){
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner (System.in);
-		NPCRoom coups = new NPCRoom(3,6,"the office you enter is dim. the walls are lined by bookshelves\n"
-				+ "and a large desk stands in the center. it's covered in paperwork and\n"
-				+ "the walls are lined with the same kind of maps and diagrams as the\n"
-				+ "hallway outside. at closer inspection, the paperwork looks more like\n"
-				+ "floor plans.\n"
-				+ "behind the desk sits s. coups: leader of the operation and owner of\n"
-				+ "the building. he looks up, almost surprised to see you standing there.\n"
-				+ "he sits back in his chair and beckons for you to sit down.\n"
-				+ "what will you do?",1);
-		Player player = new Player(1,6,100);
 		
+		Player player = new Player(1,6,100);
+		initRooms();
 		System.out.println("what is your name, player?");
 		String name = scan.nextLine();
 		player.setPlayerName(name);
@@ -55,6 +39,35 @@ public class Game {
 				+ "where will you go?");
 		// delete this later
 		String ans = scan.nextLine();
-		System.out.println("you can't go to"+ans+", "+player.name+". can't you see? you're meant to be here.");
+		System.out.println("you can't go to "+ans+", "+player.name+". can't you see? you're meant to be here.");
+	}
+	@SuppressWarnings("unused")
+	private static void initRooms(){
+		NPCRoom coups = new NPCRoom(3,5,"the office you enter is dim. the walls are lined by bookshelves\n"
+				+ "and a large desk stands in the center. it's covered in paperwork and\n"
+				+ "the walls are lined with the same kind of maps and diagrams as the\n"
+				+ "hallway outside. at closer inspection, the paperwork looks more like\n"
+				+ "floor plans.\n"
+				+ "behind the desk sits s. coups: leader of the operation and owner of\n"
+				+ "the building. he looks up, almost surprised to see you standing there.\n"
+				+ "he sits back in his chair and beckons for you to sit down.\n"
+				+ "what will you do?",1);
+		Room tocoups = new Room(3,5,"",14);
+		NPCRoom woozi = new NPCRoom(5,4,"you push open the door to reveal what looks like a closet.\n"
+				+ "the inside is lined with screens and a boy who can't be older than\n"
+				+ "fifteen sits, monitoring them. there's a half-eaten donut and a coffee\n"
+				+ "sitting on the desk next to him.\n"
+				+ "suddenly he whips around",2);
+		Room towoozi = new Room(5,5,"",13);
+		NPCRoom dk = new NPCRoom(6,7,"",3);
+		Room todk = new Room(7,7,"",12);
+		NPCRoom kwan = new NPCRoom(9,1,"",4);
+		Room tokwan = new Room(8,1,"",10);
+		NPCRoom the8 = new NPCRoom(1,3,"",5);
+		NPCRoom dino = new NPCRoom(9,3,"",0);
+		Room todino = new Room(8,3,"",10);
+		Room lasers = new Room(1,2,"",5);
+		Room turnlas = new Room(1,1,"",8);
+		Room lasend = new Room(2,1,"",10);
 	}
 }
