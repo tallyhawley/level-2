@@ -1,13 +1,16 @@
 package boomboom;
 
+import java.util.ArrayList;
+
 public class Player {
 	int x;
 	int y;
 	int health;
 	String name;
+	int remainingMoves;
 
 	// TODO change to action class
-	Action[] availableActions;
+	ArrayList<Action> availableActions = new ArrayList<Action>();
 
 	public Player(int x, int y, int health) {
 		this.x = x;
