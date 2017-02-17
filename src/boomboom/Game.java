@@ -41,20 +41,29 @@ public class Game {
 						+ "the building. he looks up, almost surprised to see you standing there.\n" + "he sits back in his chair and beckons for you to sit down.\n"
 						+ "what will you do?",
 				1);
-		Room tocoups = new Room(3, 5, "", 14);
+		Room tocoups = new Room(3, 5, "you're standing next to a large wooden door, like an office door\n"
+				+ "from the sixties. maybe that's what it is. you don't know. what you know\n"
+				+ "is that on the door there is a placard which reads\n"
+				+ "'s. coups\n"
+				+ "seventeen project leader'\n"
+				+ "will you enter? or continue forward?", 14);
 		NPCRoom woozi = new NPCRoom(5, 4,
-				"you push open a door to reveal what looks like a closet.\nthe inside is lined with screens and a boy who can't be older than\n"
+				"you push open the door to reveal what looks like a closet.\nthe inside is lined with screens and a boy who can't be older than\n"
 						+ "fifteen sits, monitoring them. there's a half-eaten donut and a coffee\nsitting on the desk next to him.\n"
 						+ "suddenly he whips around in his chair, glasses slipping down his\nnose in his hurry. at a closer look, he looks closer to twenty.\n"
 						+ "you guess this is woozi.\nwhat will you do?",
 				2);
-		Room towoozi = new Room(5, 5, "", 13);
+		Room towoozi = new Room(5, 5, "there's a small door to the side, made of a flimsy laminate and a big change from\n"
+				+ "the 'sturdy oak' aesthetic of the rest of the building. the label\n"
+				+ "next to it reads 'woozi' and 'DO NOT DISTURB' in a messy scrawl.\n"
+				+ "will you enter? or continue forward?", 13);
 		NPCRoom dk = new NPCRoom(6, 7,
 				"as soon as you enter this room, you're starting to get sick of\nthe map-covered-walls aesthetic. there's somebody working at a desk\n"
 						+ "on the other side of the room, natural light from the massive window\nwashing out the room and giving everything a dusty look. or maybe it's\n"
 						+ "just naturally dusty like that.\nthe guy turns around and smiles, eyes crinkling at the corners.\nwhat will you do?",
 				3);
-		Room todk = new Room(7, 7, "", 12);
+		//TODO finish these descriptions
+		Room todk = new Room(7, 7, "next to you, ", 12);
 		NPCRoom kwan = new NPCRoom(9, 1,
 				"the room is lit with a soft light, covered wall to wall in soft\npastels. a boy, no older than eighteen, seems to be sleeping on a beige sofa\n"
 						+ "he opens his eyes and sits up, blinking away sleep and yawning. his dyed blonde\n"
@@ -72,12 +81,14 @@ public class Game {
 						+ "light, pale even against a white jacket and faded blonde hair, and he\n" + "moves to cover up the ticking numbers behind him, kicks at the beeping\n"
 						+ "thing behind him with a curse.\n" + "this kid is... young. seventeen, at the oldest. sixteen, maybe. you don't\n"
 						+ "want to hurt him. you want to send him back to his parents, and maybe tuck\n"
-						+ "him into bed. but you know he's planted a bomb here, so you're going to\n" + "have to stop him. somehow.\n" + "what will you do?",
+						+ "him into bed. but you know he's planted a bomb in here, so you're going to\n" + "have to stop him. somehow.\n" + "what will you do?",
 				0);
 		Room todino = new Room(8, 3, "", 10);
 		Room lasers = new Room(1, 2, "", 5);
 		Room turnlas = new Room(1, 1, "", 8);
 		Room lasend = new Room(2, 1, "", 10);
-		Room startrm = new Room(1, 6, "", 11);
+		Room startrm = new Room(1, 6, "you're back where you started, in the brightly lit foyer with the\n"
+				+ "big windows. it's not as fascinating the second time around.\n"
+				+ "where will you go?", 11);
 	}
 }

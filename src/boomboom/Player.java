@@ -1,7 +1,5 @@
 package boomboom;
 
-import java.util.ArrayList;
-
 public class Player {
 	int x;
 	int y;
@@ -9,8 +7,7 @@ public class Player {
 	String name;
 	int remainingMoves;
 
-	// TODO change to action class
-	ArrayList<Action> availableActions = new ArrayList<Action>();
+	AvailAct actions = new AvailAct();
 
 	public Player(int x, int y, int health) {
 		this.x = x;
