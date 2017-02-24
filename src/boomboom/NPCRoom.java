@@ -12,19 +12,16 @@ public class NPCRoom extends Room{
 		super(x, y, desc, dir);
 	}
 
-
-
 	void startTalking(){
 		this.hosh = true;
 	}
 		
-	void update(){
+	void update(Player player){
 		if(this.hosh==true){
-			this.dir = 0;
+			player.actions.clear();
 		}
 		else{
-			// TODO
-			this.dir = 12;
+			
 		}
 	}
 }

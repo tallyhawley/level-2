@@ -6,7 +6,8 @@ public class Player {
 	int health;
 	String name;
 	int remainingMoves;
-
+	boolean playing = true;
+	
 	AvailAct actions = new AvailAct();
 
 	public Player(int x, int y, int health) {

@@ -22,7 +22,11 @@ public class AvailAct {
 		}
 	}
 	
-	public void setDir(Room room){
+	public void clear(){
+		availableActions.clear();
+	}
+	
+	public void availDir(Room room){
 		switch(room.dir){
 		case 0: availableActions.clear();
 				break;
