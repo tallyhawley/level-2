@@ -7,6 +7,7 @@ public class AvailAct {
 	Action moveEast;
 	Action moveWest;
 	Action moveSouth;
+	Action talk;
 	ArrayList<Action> availableActions = new ArrayList<Action>();
 	
 	public AvailAct() {
@@ -14,6 +15,7 @@ public class AvailAct {
 		this.moveEast = new Action("move east","e");
 		this.moveWest = new Action("move west","w");
 		this.moveSouth = new Action("move south","s");
+		this.talk = new Action("talk","t");
 	}
 	
 	public void printAa(){
@@ -93,6 +95,13 @@ public class AvailAct {
 				availableActions.add(moveSouth);
 				break;
 		}
+		
+	}
+	public void addAct(NPCRoom room){
+		if(room.hosh = false){
+			availableActions.add(talk);
+		}
+		
 	}
 
 }

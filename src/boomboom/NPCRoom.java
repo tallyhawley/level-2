@@ -12,6 +12,10 @@ public class NPCRoom extends Room{
 		super(x, y, desc, dir);
 	}
 
+	void sayLine(String line){
+		System.out.println(line);
+	}
+	
 	void startTalking(){
 		this.hosh = true;
 	}

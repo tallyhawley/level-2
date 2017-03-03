@@ -34,9 +34,9 @@ public class Game {
 				+ "branch off from the ones you can see, but they're dim and far away.\n"
 				+ "you have instructions to meet s. coups in his office, but you don't know where it is.\n"
 				+ "where will you go?");
-		//TODO delete this later
-		String act = scan.nextLine();
 		
+		String act = scan.nextLine();
+		//TODO delete
 		System.out.println("you can't go to " + act + ", " + player.name + ". can't you see? you're meant to be here.");
 	}
 
@@ -60,7 +60,8 @@ public class Game {
 				+ "sitting on the desk next to him.\n"
 				+ "suddenly he whips around in his chair, glasses slipping down his\n"
 				+ "nose in his hurry. at a closer look, he looks closer to twenty.\n"
-				+ "you guess this is woozi.\nwhat will you do?", 2);
+				+ "you guess this is woozi.\n"
+				+ "what will you do?", 2);
 		Room towoozi = new Room(5, 5, "there's a small door to the side, made of a flimsy laminate and a big change from\n"
 				+ "the 'sturdy oak' aesthetic of the rest of the building. the label\n"
 				+ "next to it reads 'woozi' and 'DO NOT DISTURB' in a messy scrawl.\n"
@@ -107,22 +108,31 @@ public class Game {
 				+ "him into bed. but you know he's planted a bomb in here, so you're going to\n" 
 				+ "have to stop him. somehow.\n" 
 				+ "what will you do?", 0);
-		//TODO finish these descriptions
-		Room todino = new Room(8, 3, "", 10);
+		//finish these descriptions
+		Room todino = new Room(8, 3, "the door in front of you is rather foreboding, you think. you don't\n"
+				+ "know whether it's supposed to be like that or if you're just tired as hell\n"
+				+ "and you're starting to imagine things. it's metal, and the words 'boiler room'\n"
+				+ "are engraved into the surface."
+				+ "will you enter? or will you turn around?", 10);
 		Room lasers = new Room(1, 2, "", 5);
 		Room turnlas = new Room(1, 1, "", 8);
 		Room lasend = new Room(2, 1, "", 10);
 		Room startrm = new Room(1, 6, "you're back where you started, in the brightly lit foyer with the\n"
 				+ "big windows. it's not as fascinating the second time around.\n"
 				+ "where will you go?", 11);
-		Room ehall = new Room(2, 5, "", 10);
+		Room nhall = new Room(1, 4, "the darkness is oppressive and hazy, almost smokey. you think you can see flashes\n"
+				+ "of light somewhere. you're not sure. you're going to keep walking.", 5);
+		Room ehall = new Room(2, 5, "the pastel yellow of the walls is calming but surreal. you're surrounded by\n"
+				+ "maps written in languages you can't understand. you're going to keep walking.", 10);
 		Room eend = new Room(9,5, "you seem to have hit a dead end. you're going to have to turn around.", 4);
-		Room shall = new Room(1, 6, "", 5);
+		Room shall = new Room(1, 6, "the lights are a little disconcerting. the sterile 'doctor's office' feeling\n"
+				+ "still there. the hallway smells like disinfectant. you're going to keep walking.", 5);
 		Room send = new Room(1,9, "you seem to have hit a dead end. you're going to have to turn around.", 1);
 		Room dkhall = new Room(7, 6, "", 5);
 		Room dkend = new Room(7, 8, "you seem to have hit a dead end. you're going to have to turn around.",1);
 		Room todkhall = new Room(7, 6, "", 14);
 		Room kwanhall = new Room(3, 1, "", 10);
+		Room todinohall = new Room(7, 1, "", 14);
 		Room dinohall = new Room(7,2, "", 5);
 		Room dinoturn = new Room(7, 3, "", 6);
 		Room directory = new Room(1, 7, "", 11);
