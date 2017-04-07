@@ -16,9 +16,6 @@ public class NPCRoom extends Room{
 		System.out.println(line);
 	}
 	
-	void startTalking(){
-		this.hosh = true;
-	}
 		
 	void update(Player player){
 		if(this.hosh==true){

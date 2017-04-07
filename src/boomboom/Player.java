@@ -6,9 +6,8 @@ public class Player {
 	int health;
 	String name;
 	int remainingMoves;
-	boolean playing = true;
-	
 	AvailAct actions = new AvailAct();
+	Map map = new Map();
 
 	public Player(int x, int y, int health) {
 		this.x = x;
@@ -20,4 +19,11 @@ public class Player {
 		this.name = name;
 	}
 
+	//TODO
+	public void act(String act){
+		if(act.equals(actions.moveNorth.hotkey)){
+			
+		}
+	}
+	
 }
