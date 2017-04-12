@@ -33,5 +33,13 @@ public class Map {
 		map[Game.towoozi.x][Game.towoozi.y] = Game.towoozi;
 		map[Game.turnlas.x][Game.turnlas.y] = Game.turnlas;
 		map[Game.woozi.x][Game.woozi.y] = Game.woozi;
+		map[4][5] = Game.ehall;
+		map[6][5] = Game.ehall;
+		map[8][5] = Game.ehall;
+		map[1][8] = Game.shall;
+		map[4][1] = Game.kwanhall;
+		map[5][1] = Game.kwanhall;
+		map[6][1] = Game.kwanhall;
+		map[8][1] = Game.kwanhall;
 	}
 }

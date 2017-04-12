@@ -139,6 +139,7 @@ public class Game {
 				+ "where will you go?");
 		while(gameOver == false){
 			if(firstTime == true){
+				player.actions.availDir(player.map.map[player.x][player.y]);
 				player.actions.printAa();
 				String act = scan.nextLine();
 				player.act(act);
@@ -147,6 +148,7 @@ public class Game {
 			}
 			else{
 				System.out.println(player.map.map[player.x][player.y].desc);
+				player.actions.availDir(player.map.map[player.x][player.y]);
 				player.actions.printAa();
 				String act = scan.nextLine();
 				player.act(act);

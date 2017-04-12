@@ -9,23 +9,23 @@ public class Action {
 			this.name = name;
 		}
 		
-		void moveNorth(Player player){
+		static void moveNorth(Player player){
 			player.y--;
 		}
 		
-		void moveEast(Player player){
+		static void moveEast(Player player){
 			player.x++;
 		}
 		
-		void moveWest(Player player){
+		static void moveWest(Player player){
 			player.y++;
 		}
 		
-		void moveSouth(Player player){
+		static void moveSouth(Player player){
 			player.x--;
 		}
 		
-		void talk(NPCRoom room){
+		static void talk(NPCRoom room){
 			room.hosh = true;
 		}
 		

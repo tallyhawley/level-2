@@ -19,8 +19,8 @@ public class AvailAct {
 	}
 	
 	public void printAa(){
+		System.out.println("\n");
 		for (Action action : availableActions){
-			System.out.println("\n\n");
 			System.out.println(action.hotkey + ": " + action.name);
 		}
 	}
