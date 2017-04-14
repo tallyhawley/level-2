@@ -19,7 +19,7 @@ public class AvailAct {
 	}
 	
 	public void printAa(){
-		System.out.println("\n");
+		System.out.println(" ");
 		for (Action action : availableActions){
 			System.out.println(action.hotkey + ": " + action.name);
 		}
@@ -96,13 +96,9 @@ public class AvailAct {
 				availableActions.add(moveSouth);
 				break;
 		}
-		
-	}
-	public void addAct(NPCRoom room){
-		if(room.hosh = false){
+		if(room.npc == true){
 			availableActions.add(talk);
 		}
-		
 	}
 
 }

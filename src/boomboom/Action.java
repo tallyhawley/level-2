@@ -18,15 +18,18 @@ public class Action {
 		}
 		
 		static void moveWest(Player player){
-			player.y++;
-		}
-		
-		static void moveSouth(Player player){
 			player.x--;
 		}
 		
-		static void talk(NPCRoom room){
-			room.hosh = true;
+		static void moveSouth(Player player){
+			player.y++;
+		}
+		
+		static void talk(Room room){
+			if(room==Game.coups){
+				System.out.println("s. coups leans forward, elbows resting on the surface of his desk. he looks\n"
+						+ "worried");
+			}
 		}
 		
 }

@@ -21,21 +21,21 @@ public class Player {
 
 	//TODO
 	public void act(String act){
-		if(act.equals(actions.moveNorth.hotkey)){
+		if(act.equalsIgnoreCase(actions.moveNorth.hotkey)){
 			Action.moveNorth(this);
 		}
-		else if(act.equals(actions.moveEast.hotkey)){
+		else if(act.equalsIgnoreCase(actions.moveEast.hotkey)){
 				Action.moveEast(this);
 		}
-		else if(act.equals(actions.moveSouth.hotkey)){
+		else if(act.equalsIgnoreCase(actions.moveSouth.hotkey)){
 			Action.moveSouth(this);
 		}
-		else if(act.equals(actions.moveWest.hotkey)){
+		else if(act.equalsIgnoreCase(actions.moveWest.hotkey)){
 			Action.moveWest(this);
 		}
-		//if(act.equals(actions.talk.hotkey)){
-		//	Action.talk(this.map.map[this.x][this.y]);
-		//}
+		if(act.equals(actions.talk.hotkey)){
+			Action.talk(this.map.map[this.x][this.y]);
+		}
 	}
 	
 }
