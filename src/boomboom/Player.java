@@ -19,23 +19,33 @@ public class Player {
 		this.name = name;
 	}
 
-	//TODO
-	public void act(String act){
-		if(act.equalsIgnoreCase(actions.moveNorth.hotkey)){
+	// TODO
+	public void act(String act) {
+		if (act.equalsIgnoreCase(actions.moveNorth.hotkey)) {
 			Action.moveNorth(this);
-		}
-		else if(act.equalsIgnoreCase(actions.moveEast.hotkey)){
-				Action.moveEast(this);
-		}
-		else if(act.equalsIgnoreCase(actions.moveSouth.hotkey)){
+
+			System.out.println(" ");
+			System.out.println(this.map.map[this.x][this.y].desc);
+		} else if (act.equalsIgnoreCase(actions.moveEast.hotkey)) {
+			Action.moveEast(this);
+
+			System.out.println(" ");
+			System.out.println(this.map.map[this.x][this.y].desc);
+		} else if (act.equalsIgnoreCase(actions.moveSouth.hotkey)) {
 			Action.moveSouth(this);
-		}
-		else if(act.equalsIgnoreCase(actions.moveWest.hotkey)){
+
+			System.out.println(" ");
+			System.out.println(this.map.map[this.x][this.y].desc);
+		} else if (act.equalsIgnoreCase(actions.moveWest.hotkey)) {
 			Action.moveWest(this);
+
+			System.out.println(" ");
+			System.out.println(this.map.map[this.x][this.y].desc);
 		}
-		if(act.equals(actions.talk.hotkey)){
+		if (act.equals(actions.talk.hotkey)) {
+			System.out.println(" ");
 			Action.talk(this.map.map[this.x][this.y]);
 		}
 	}
-	
+
 }

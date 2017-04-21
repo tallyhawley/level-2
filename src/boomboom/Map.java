@@ -2,8 +2,8 @@ package boomboom;
 
 public class Map {
 	Room[][] map = new Room[10][10];
-	
-	public Map(){
+
+	public Map() {
 		map[Game.coups.x][Game.coups.y] = Game.coups;
 		map[Game.dino.x][Game.dino.y] = Game.dino;
 		map[Game.dinohall.x][Game.dinohall.y] = Game.dinohall;
@@ -16,7 +16,7 @@ public class Map {
 		map[Game.ehall.x][Game.ehall.y] = Game.ehall;
 		map[Game.elevator.x][Game.elevator.y] = Game.elevator;
 		map[Game.kwan.x][Game.kwan.y] = Game.kwan;
-		map[Game.kwanhall.x][Game.kwanhall.y] = Game.kwan;
+		map[Game.kwanhall.x][Game.kwanhall.y] = Game.kwanhall;
 		map[Game.lasend.x][Game.lasend.y] = Game.lasend;
 		map[Game.lasers.x][Game.lasers.y] = Game.lasers;
 		map[Game.nhall.x][Game.nhall.y] = Game.nhall;
