@@ -1,5 +1,7 @@
 package boomboom;
 
+import java.util.ArrayList;
+
 public class Player {
 	int x;
 	int y;
@@ -8,6 +10,7 @@ public class Player {
 	int remainingMoves;
 	AvailAct actions = new AvailAct();
 	Map map = new Map();
+	ArrayList<Item> inventory = new ArrayList<Item>();
 
 	public Player(int x, int y, int health) {
 		this.x = x;
@@ -19,7 +22,6 @@ public class Player {
 		this.name = name;
 	}
 
-	// TODO
 	public void act(String act) {
 		if (act.equalsIgnoreCase(actions.moveNorth.hotkey)) {
 			Action.moveNorth(this);
@@ -44,7 +46,10 @@ public class Player {
 		}
 		if (act.equals(actions.talk.hotkey)) {
 			System.out.println(" ");
-			Action.talk(this.map.map[this.x][this.y]);
+			Action.talk(this.map.map[this.x][this.y], this);
+		}
+		if (act.equals(actions.inv.hotkey)){
+			Action.printInv(this);
 		}
 	}
 

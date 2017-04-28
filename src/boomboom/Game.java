@@ -116,10 +116,12 @@ public class Game {
 			5, false);
 	static Room send = new Room(1, 9, "you seem to have hit a dead end. you're going to have to turn around.", 1,
 			false);
-	static Room dkhall = new Room(7, 6, "dkhall", 5, false);
+	static Room dkhall = new Room(7, 6, "looks like a normal hallway.\n"
+			+ "keep walking?", 5, false);
 	static Room dkend = new Room(7, 8, "you seem to have hit a dead end. you're going to have to turn around.", 1,
 			false);
-	static Room todkhall = new Room(7, 6, "todkhall", 14, false);
+	static Room todkhall = new Room(7, 5, "the hallway branches off to the south here.\n"
+			+ "where will you go?", 14, false);
 	static Room kwanhall = new Room(3, 1, "kwanhall", 10, false);
 	static Room todinohall = new Room(7, 1, "todinohall", 14, false);
 	static Room dinohall = new Room(7, 2, "dinohall", 5, false);
@@ -129,22 +131,37 @@ public class Game {
 			+ "- DK: planning, communications, topography. southeast hall.\n"
 			+ "- THE8: weaponry, defense, security. north hall.\n" + "- BOO SEUNGKWAN: advertising. northeast hall.\n"
 			+ "- VERNON: costuming, neurosciences. south hall.\n" + "and, crossed out:\n"
-			+ "- DINO: mathematics, calculations, chemistry. northeast hall.\n"
+			+ "- DINO: mathematics, physics, chemistry. northeast hall.\n"
 			+ "to your east is an elevator door. it seems like it's slightly open.\n" + "where will you go?", 11,
 			false);
 	static Room elevator = new Room(2, 7,
 			"as you enter the elevator, you come face to face with an... unfairly attractive\n"
-					+ "person. he looks twenty, but knowing half of the people here he's probably\n"
-					+ "more like eighteen. you check him out as discreetly as you can",
-			4, true);
+					+ "person. he looks sixteen, but knowing half of the people here he's probably\n"
+					+ "more like eighteen. you check him out as discreetly as you can. he's dressed\n"
+					+ "in a black trenchcoat, buttoned, over a turtleneck. he's probably the only\n"
+					+ "person you've ever seen who can pull that off. he's smiling at you, a playful\n"
+					+ "upturn of the lip. wow, that's not fair. what the hell.\n"
+					+ "you can step back out, or you can stay and talk.\n"
+					+ "what will you do?",
+			4, true); 
 	// items
 	static Weapon drone = new Weapon("drone",
 			"a dart-equipped drone given to you by the8.\n"
 					+ "it's made of a sturdy metal you think is titanium and painted a matte black.\n"
 					+ "the motor makes a low whirr when you turn it on.",
 			300, 10);
+	static Item radio = new Item("radio","a wireless radio, akin to a walkie-talkie, connecting you to woozi.\n"
+			+ "it has a mic but no speaker, so that he can hear what's going on around\n"
+			+ "you. it makes you a little uncomfortable, but you understand that it's\n"
+			+ "for the safety of the mission.",250);
+	static Item bracelet = new Item("woven bracelet","a good luck charm given to you by seungkwan. it isn't\n"
+			+ "worth much money but the sentiment, though you haven't known him long,\n"
+			+ "is priceless. keep it safe.",100);
+	static Item diagram = new Item("diagram","a diagram, drawn by dokyeom. you can't really understand it,\n"
+			+ "but you took it anyway. you don't know what to do with it.",145);
 	// misc
 	static boolean gameOver = false;
+	static boolean gameWon;
 	static String intro = "you are standing in the foyer of a large building. the ceiling arches high above you\n"
 			+ "and there are windows covering the entire wall behind you. your shadow stretches far\n"
 			+ "in front of you in the afternoon sun. you're not sure whether your sweat-slick skin \n"

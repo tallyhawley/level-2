@@ -8,6 +8,7 @@ public class AvailAct {
 	Action moveWest;
 	Action moveSouth;
 	Action talk;
+	Action inv;
 	ArrayList<Action> availableActions = new ArrayList<Action>();
 
 	public AvailAct() {
@@ -16,6 +17,7 @@ public class AvailAct {
 		this.moveWest = new Action("move west", "w");
 		this.moveSouth = new Action("move south", "s");
 		this.talk = new Action("talk", "t");
+		this.inv = new Action("check inventory", "i");
 	}
 
 	public void printAa() {
@@ -119,7 +121,9 @@ public class AvailAct {
 			availableActions.clear();
 			availableActions.add(talk);
 		}
-
+		if (room.npc == false){
+			availableActions.add(inv);
+		}
 	}
 
 }
