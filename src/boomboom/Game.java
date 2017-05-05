@@ -81,7 +81,6 @@ public class Game {
 			+ "want to hurt him. you want to send him back to his parents, and maybe tuck\n"
 			+ "him into bed. but you know he's planted a bomb in here, so you're going to\n"
 			+ "have to stop him. somehow.\n" + "what will you do?", 0, true);
-	// TODO finish these descriptions
 	static Room todino = new Room(8, 3,
 			"the door in front of you is rather foreboding, you think. you don't\n"
 					+ "know whether it's supposed to be like that or if you're just tired as hell\n"
@@ -122,7 +121,8 @@ public class Game {
 			false);
 	static Room todkhall = new Room(7, 5, "the hallway branches off to the south here.\n"
 			+ "where will you go?", 14, false);
-	static Room kwanhall = new Room(3, 1, "kwanhall", 10, false);
+	static Room kwanhall = new Room(3, 1, "the walls are painted in pretty pastels here, blue and yellow and\n"
+			+ "a touch of ", 10, false);
 	static Room todinohall = new Room(7, 1, "todinohall", 14, false);
 	static Room dinohall = new Room(7, 2, "dinohall", 5, false);
 	static Room dinoturn = new Room(7, 3, "dinoturn", 6, false);
@@ -175,17 +175,17 @@ public class Game {
 			+ "you have instructions to meet s. coups in his office, but you don't know where it is.\n"
 			+ "where will you go?";
 
-	public static void main(String[] args) {
+	static Scanner scan = new Scanner(System.in);
+	
 
-		@SuppressWarnings("resource")
-		Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args){
 
 		Player player = new Player(1, 5, 100);
-
+		
 		System.out.println("what is your name, player?");
 		String name = scan.nextLine();
-		name = name.toLowerCase();
-		player.setPlayerName(name);
+		player.setPlayerName(name.toLowerCase());
 
 		System.out.println("- WELCOME TO B O O M B O O M -\n" + "your mission: defend the ship.\n"
 				+ "s. coups and woozi are counting on you, " + player.name + ".\n" + "don't let them down.\nx x x\n"

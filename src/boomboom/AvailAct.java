@@ -114,13 +114,13 @@ public class AvailAct {
 			availableActions.add(moveSouth);
 			break;
 		}
-		if (room.npc == true && Action.finish == false) {
+		if (room.npc == true) {
 			availableActions.add(talk);
 		}
-		if (room.npc == true && Action.first == false) {
-			availableActions.clear();
-			availableActions.add(talk);
+		if(Action.finish == true){
+			availableActions.remove(talk);
 		}
+		
 		if (room.npc == false){
 			availableActions.add(inv);
 		}
