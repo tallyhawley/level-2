@@ -123,9 +123,13 @@ public class Game {
 			+ "where will you go?", 14, false);
 	static Room kwanhall = new Room(3, 1, "the walls are painted in pretty pastels here, blue and yellow and\n"
 			+ "a touch of ", 10, false);
-	static Room todinohall = new Room(7, 1, "todinohall", 14, false);
+	static Room todinohall = new Room(7, 1, "the hallway branches off to the south, going dark and foreboding\n"
+			+ "like the hallway in a horror movie that you're not supposed to go into\n"
+			+ "but some side character goes into it anyway. you don't know if you want\n"
+			+ "to go in, at least just yet.\n"
+			+ "where will you go?", 14, false);
 	static Room dinohall = new Room(7, 2, "dinohall", 5, false);
-	static Room dinoturn = new Room(7, 3, "dinoturn", 6, false);
+	static Room dinoturn = new Room(7, 3, "the hallway turns abruptly to the left", 6, false);
 	static Room directory = new Room(1, 7, "to your side is a directory. all it reads is:\n"
 			+ "- S. COUPS: project lead, biorhythmics. east hall.\n" + "- WOOZI: monitoring, analytics. east hall.\n"
 			+ "- DK: planning, communications, topography. southeast hall.\n"

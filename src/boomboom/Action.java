@@ -1,5 +1,7 @@
 package boomboom;
 
+import java.util.Random;
+
 public class Action {
 	String hotkey;
 	String name;
@@ -22,7 +24,18 @@ public class Action {
 			+ "\"oh!\" he exclaims. \"you're- the- the kid. that we hired.\n"
 			+ "coups said he'd send you over. you know what we're trying to\n"
 			+ "do, right?\"";
-	static String woozi2 = "\nline 2";
+	static String woozi2 = "\n\"yeah,\" you say, hesitant.\n"
+			+ "\"great, i don't have to explain anything.\" woozi sits up a bit straighter,\n"
+			+ "adjusting his shirt where it slipped off his shoulder in his rush.\n"
+			+ "he holds out a little box, about the size of your fist."
+			+ "\"i'm just going to give you this... radio... walkie-talkie...\n"
+			+ "microphone... thing. it's just got a mic, so i can hear you but\n"
+			+ "you can't hear me. it's just so i can keep an eye on the situation -\n"
+			+ "if something goes wrong, or you're in trouble, i'll call you or flash\n"
+			+ "the lights.\"\n"
+			+ "you nod, taking the radio.\n"
+			+ "\"good luck, kid,\" he says.\n\n"
+			+ "you have received \"radio\" from woozi.";
 	static String the81 = "line 1";
 	static String the82 = "\nline 2";
 	static String kwan1 = "line 1";
@@ -31,7 +44,8 @@ public class Action {
 	static String dk2 = "\nline 2";
 	static String vernon1 = "line 1";
 	static String vernon2 = "\nline 2";
-	static String dino1 = "line 1";
+	static String dino1 = "\"what the hell are you doing here?\" the boy exclaims. he moves to cover what\n"
+			+ "looks like a clock, red letters counting down from";
 	static String dinoWin = "\nthis prints if u win";
 	static String dinoLose = "\nthis prints if u lose";
 
@@ -72,6 +86,11 @@ public class Action {
 			System.out.println(coups1);
 			nextLine(player);
 			System.out.println(coups2);
+			while(player.remainingMoves<45){
+				if(player.remainingMoves<45){
+					player.remainingMoves = new Random().nextInt(100);
+				}	
+			}
 			finish = true;
 		}
 		//
@@ -131,8 +150,13 @@ public class Action {
 
 	static void printInv(Player player){
 		System.out.println(" ");
-		for(Item item : player.inventory){
+		if(player.inventory.isEmpty()){
+			System.out.println("your inventory is empty right now.");
+		}
+		else{
+			for(Item item : player.inventory){
 			item.printDesc();
+			}
 		}
 	}	
 }

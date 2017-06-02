@@ -16,6 +16,7 @@ public class Map {
 		map[Game.ehall.x][Game.ehall.y] = Game.ehall;
 		map[Game.elevator.x][Game.elevator.y] = Game.elevator;
 		map[Game.kwan.x][Game.kwan.y] = Game.kwan;
+		map[Game.tokwan.x][Game.tokwan.y] = Game.tokwan;
 		map[Game.kwanhall.x][Game.kwanhall.y] = Game.kwanhall;
 		map[Game.lasend.x][Game.lasend.y] = Game.lasend;
 		map[Game.lasers.x][Game.lasers.y] = Game.lasers;
@@ -40,6 +41,5 @@ public class Map {
 		map[4][1] = Game.kwanhall;
 		map[5][1] = Game.kwanhall;
 		map[6][1] = Game.kwanhall;
-		map[8][1] = Game.kwanhall;
 	}
 }
