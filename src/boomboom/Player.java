@@ -7,16 +7,33 @@ public class Player {
 	int y;
 	int health;
 	String name;
-	int remainingMoves = 30;
+	int remainingMoves;
 	AvailAct actions = new AvailAct();
 	Map map = new Map();
 	ArrayList<Item> inventory = new ArrayList<Item>();
 	boolean isEqual;
-
+	static Weapon drone = new Weapon("drone",
+			"a dart-equipped drone given to you by the8.\n"
+					+ "it's made of a sturdy metal you think is titanium and painted a matte black.\n"
+					+ "the motor makes a low whirr when you turn it on.",
+			300, 10);
+	static Item radio = new Item("radio","a wireless radio, akin to a walkie-talkie, connecting you to woozi.\n"
+			+ "it has a mic but no speaker, so that he can hear what's going on around\n"
+			+ "you. it makes you a little uncomfortable, but you understand that it's\n"
+			+ "for the safety of the mission.",250);
+	static Item bracelet = new Item("woven bracelet","a good luck charm given to you by seungkwan. it isn't\n"
+			+ "worth much money but the sentiment, though you haven't known him long,\n"
+			+ "is priceless. keep it safe.",100);
+	static Item diagram = new Item("diagram","a diagram, drawn by dokyeom. you can't really understand it,\n"
+			+ "but you took it anyway. you don't know what to do with it.",145);
+	static boolean gameOver = false;
+	static boolean gameWon;
+	
 	public Player(int x, int y, int health) {
 		this.x = x;
 		this.y = y;
 		this.health = health;
+		this.remainingMoves = 45;
 	}
 
 	public void setPlayerName(String name) {
@@ -34,30 +51,31 @@ public class Player {
 		else if(isEqual == false){
 			System.out.println("\nthat's not an option right now. maybe it won't ever be an option. who knows?");
 		}
-		else if (act.equalsIgnoreCase(actions.moveNorth.hotkey) && actions.availableActions.contains(actions.moveNorth)) {
+		else if (act.equalsIgnoreCase(actions.moveNorth.hotkey)) {
 			Action.moveNorth(this);
 			System.out.println(" ");
 			System.out.println(this.map.map[this.x][this.y].desc);
-		} else if (act.equalsIgnoreCase(actions.moveEast.hotkey) && actions.availableActions.contains(actions.moveEast)) {
+		} else if (act.equalsIgnoreCase(actions.moveEast.hotkey)) {
 			Action.moveEast(this);
 			System.out.println(" ");
 			System.out.println(this.map.map[this.x][this.y].desc);
-		} else if (act.equalsIgnoreCase(actions.moveSouth.hotkey) && actions.availableActions.contains(actions.moveSouth)) {
+		} else if (act.equalsIgnoreCase(actions.moveSouth.hotkey)) {
 			Action.moveSouth(this);
 			System.out.println(" ");
 			System.out.println(this.map.map[this.x][this.y].desc);
-		} else if (act.equalsIgnoreCase(actions.moveWest.hotkey) && actions.availableActions.contains(actions.moveWest)) {
+		} else if (act.equalsIgnoreCase(actions.moveWest.hotkey)) {
 			Action.moveWest(this);
 			System.out.println(" ");
 			System.out.println(this.map.map[this.x][this.y].desc);
 		}
-		if (act.equals(actions.talk.hotkey) && actions.availableActions.contains(actions.talk)) {
+		if (act.equals(actions.talk.hotkey)) {
 			System.out.println(" ");
 			Action.talk(this.map.map[this.x][this.y], this);
 		}
-		if (act.equals(actions.inv.hotkey) && actions.availableActions.contains(actions.inv)){
+		if (act.equals(actions.inv.hotkey)){
 			Action.printInv(this);
 		}
+		this.remainingMoves--;
 	}
 
 }
