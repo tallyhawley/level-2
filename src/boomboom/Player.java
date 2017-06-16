@@ -1,6 +1,7 @@
 package boomboom;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Player {
 	int x;
@@ -17,6 +18,7 @@ public class Player {
 					+ "it's made of a sturdy metal you think is titanium and painted a matte black.\n"
 					+ "the motor makes a low whirr when you turn it on.",
 			300, 10);
+	static Weapon dartgun = new Weapon("dart gun","given to you by the8",250,15);
 	static Item radio = new Item("radio","a wireless radio, akin to a walkie-talkie, connecting you to woozi.\n"
 			+ "it has a mic but no speaker, so that he can hear what's going on around\n"
 			+ "you. it makes you a little uncomfortable, but you understand that it's\n"
@@ -34,6 +36,11 @@ public class Player {
 		this.y = y;
 		this.health = health;
 		this.remainingMoves = 45;
+		while(this.remainingMoves<45){
+			if(this.remainingMoves<45){
+				this.remainingMoves = new Random().nextInt(100);
+			}	
+		}
 	}
 
 	public void setPlayerName(String name) {
@@ -47,24 +54,34 @@ public class Player {
 		}
 		if(act.isEmpty()){
 			System.out.println("you're going to need to be more specific than the nothing you just entered.");
+			this.remainingMoves--;
 		}
 		else if(isEqual == false){
 			System.out.println("\nthat's not an option right now. maybe it won't ever be an option. who knows?");
+			this.remainingMoves--;
 		}
 		else if (act.equalsIgnoreCase(actions.moveNorth.hotkey)) {
 			Action.moveNorth(this);
+			this.remainingMoves--;
+			if(this.remainingMoves == 0){
+				gameWon = false;
+				gameOver = true;
+			}
 			System.out.println(" ");
 			System.out.println(this.map.map[this.x][this.y].desc);
 		} else if (act.equalsIgnoreCase(actions.moveEast.hotkey)) {
 			Action.moveEast(this);
+			this.remainingMoves--;
 			System.out.println(" ");
 			System.out.println(this.map.map[this.x][this.y].desc);
 		} else if (act.equalsIgnoreCase(actions.moveSouth.hotkey)) {
 			Action.moveSouth(this);
+			this.remainingMoves--;
 			System.out.println(" ");
 			System.out.println(this.map.map[this.x][this.y].desc);
 		} else if (act.equalsIgnoreCase(actions.moveWest.hotkey)) {
 			Action.moveWest(this);
+			this.remainingMoves--;
 			System.out.println(" ");
 			System.out.println(this.map.map[this.x][this.y].desc);
 		}
@@ -75,7 +92,7 @@ public class Player {
 		if (act.equals(actions.inv.hotkey)){
 			Action.printInv(this);
 		}
-		this.remainingMoves--;
+		
 	}
 
 }

@@ -2,7 +2,7 @@ package boomboom;
 
 public class Line {
 	static String coups1 = "s. coups leans forward, elbows resting on the surface of his desk. he looks\n"
-			+ "worried.\n" + "\"i need your help. but...\" he pauses.\n"
+			+ "worried.\n" + "\"i need your help, "+Game.player.name+". but...\" he pauses.\n"
 			+ "\"this could be dangerous. are you sure you're up to it?\"";
 	static String coups2 = "\n\"yes, mr. coups,\" you say. \"what do you need?\"\n"
 			+ "s. coups laughs and shakes his head.\n" + "\"call me seungcheol,\" he says. \"anyway...\n"
@@ -19,7 +19,7 @@ public class Line {
 			+ "\"oh!\" he exclaims. \"you're- the- the kid. that we hired.\n"
 			+ "coups said he'd send you over. you know what we're trying to\n"
 			+ "do, right?\"";
-	static String woozi2 = "\n\"yeah,\" you say, hesitant.\n"
+	static String woozi2 = "\n\"yeah,\" you say, hesitant. \"my name's " + Game.player.name + ", by the way.\"\n"
 			+ "\"great, i don't have to explain anything.\" woozi sits up a bit straighter,\n"
 			+ "adjusting his shirt where it slipped off his shoulder in his rush.\n"
 			+ "he holds out a little box, about the size of your fist.\n"
@@ -31,7 +31,13 @@ public class Line {
 			+ "you nod, taking the radio.\n"
 			+ "\"good luck, kid,\" he says.\n\n"
 			+ "you have received \"radio\" from woozi.";
-	static String the81 = "line 1";
+	static String the81 = "you can't quite tell whether this guy is alive or not, when suddenly he speaks\n"
+			+ "up, voice near a whisper and higher than you expect it to be.\n"
+			+ "\"hey,\" he says. \"are you "+Game.player.name+"?\"\n"
+			+ "at your nod, he looks somewhat relieved. you can't really tell.\n"
+			+ "\"s. coups told me a little bit about your job, if that's alright.\n"
+			+ "nothing much, just enough that i can help you.\"\n"
+			+ "";
 	static String the82 = "\nline 2";
 	static String kwan1 = "line 1";
 	static String kwan2 = "\nline 2";

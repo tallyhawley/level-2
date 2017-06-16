@@ -1,7 +1,5 @@
 package boomboom;
 
-import java.util.Random;
-
 public class Action {
 	String hotkey;
 	String name;
@@ -44,11 +42,7 @@ public class Action {
 			System.out.println(Line.coups1);
 			nextLine(player);
 			System.out.println(Line.coups2);
-			while(player.remainingMoves<45){
-				if(player.remainingMoves<45){
-					player.remainingMoves = new Random().nextInt(100);
-				}	
-			}
+			
 			finish = true;
 		}
 		//

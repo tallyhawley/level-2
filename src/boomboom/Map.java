@@ -130,7 +130,9 @@ public class Map {
 			+ "where will you go?", 14, false);
 	static Room dinohall = new Room(7, 2, "darkness and foreboding.\n"
 			+ "keep walking?", 5, false);
-	static Room dinoturn = new Room(7, 3, "the hallway turns abruptly east,", 6, false);
+	static Room dinoturn = new Room(7, 3, "the hallway turns abruptly here. it's not quite pitch dark\n"
+			+ "but it's sort of creepy anyway.\n"
+			+ "keep moving?", 6, false);
 	static Room directory = new Room(1, 7, "to your side is a directory. all it reads is:\n"
 			+ "- S. COUPS: project lead, biorhythmics. east hall.\n" + "- WOOZI: monitoring, analytics. east hall.\n"
 			+ "- DK: planning, communications, topography. southeast hall.\n"

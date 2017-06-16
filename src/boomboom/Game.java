@@ -3,6 +3,9 @@ package boomboom;
 import java.util.Scanner;
 
 public class Game {
+
+	static Scanner scan = new Scanner(System.in);
+	static Player player;
 	
 	static String intro = "you are standing in the foyer of a large building. the ceiling arches high above you\n"
 			+ "and there are windows covering the entire wall behind you. your shadow stretches far\n"
@@ -16,12 +19,9 @@ public class Game {
 			+ "branch off from the ones you can see, but they're dim and far away.\n"
 			+ "you have instructions to meet s. coups in his office, but you don't know where it is.\n"
 			+ "where will you go?";
-
-	static Scanner scan = new Scanner(System.in);
 	
-	public static void main(String[] args){
-
-		Player player = new Player(1, 5, 100);
+	public Game(){
+		player = new Player(1, 5, 100);
 		
 		System.out.println("what is your name, player?");
 		String name = scan.nextLine();
@@ -37,6 +37,8 @@ public class Game {
 			player.act(act);
 			player.actions.clear();
 		}
+		System.out.println("somewhere in the building, a bomb goes");
+	
 	}
 
 }
