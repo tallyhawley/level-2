@@ -11,6 +11,10 @@ public class Action {
 		player.actions.printAa();
 		Game.scan.nextLine();
 	}
+
+	static void dinoChallenge(Player player){
+		
+	}
 	
 	public Action(String name, String hotkey) {
 		this.hotkey = hotkey;

@@ -8,7 +8,7 @@ public class Line {
 			+ "s. coups laughs and shakes his head.\n" + "\"call me seungcheol,\" he says. \"anyway...\n"
 			+ "\"there's a bomb, somewhere in the building. we don't know who planted it,\n"
 			+ "or when it's going to go off. the only lead we have is the bomber's initials:\n"
-			+ "'LDN'. they're familiar but i can't seem to remember who they belong to...\n"
+			+ "'l.d.n'. they're familiar but i can't seem to remember who they belong to...\n"
 			+ "anyway. we need you to find the bomber, and stop the bomb. you're our last\n" + "hope.\"\n"
 			+ "he pauses.\n" + "\"if you need to, you can find ji- woozi. he's in charge of security, so he's\n"
 			+ "got a bunch of footage. he'll tell you if he found anything suspicious.\"\n"
@@ -19,7 +19,7 @@ public class Line {
 			+ "\"oh!\" he exclaims. \"you're- the- the kid. that we hired.\n"
 			+ "coups said he'd send you over. you know what we're trying to\n"
 			+ "do, right?\"";
-	static String woozi2 = "\n\"yeah,\" you say, hesitant. \"my name's " + Game.player.name + ", by the way.\"\n"
+	static String woozi2 = "\n\"yeah,\" you say, hesitant.\n"
 			+ "\"great, i don't have to explain anything.\" woozi sits up a bit straighter,\n"
 			+ "adjusting his shirt where it slipped off his shoulder in his rush.\n"
 			+ "he holds out a little box, about the size of your fist.\n"
@@ -37,7 +37,7 @@ public class Line {
 			+ "at your nod, he looks somewhat relieved. you can't really tell.\n"
 			+ "\"s. coups told me a little bit about your job, if that's alright.\n"
 			+ "nothing much, just enough that i can help you.\"\n"
-			+ "";
+			+ "he holds out his hand for you to shake.";
 	static String the82 = "\nline 2";
 	static String kwan1 = "line 1";
 	static String kwan2 = "\nline 2";
@@ -46,7 +46,8 @@ public class Line {
 	static String vernon1 = "line 1";
 	static String vernon2 = "\nline 2";
 	static String dino1 = "\"what the hell are you doing here?\" the boy exclaims. he moves to cover what\n"
-			+ "looks like a clock, red letters counting down from";
+			+ "looks like a clock, red numbers counting down from "+ Player.bombTime + ".\n"
+			+ "beep, beep, beep, goes the clock, steady. it reminds you of a hospital.";
 	static String dinoWin = "\nthis prints if u win";
 	static String dinoLose = "\nthis prints if u lose";
 }

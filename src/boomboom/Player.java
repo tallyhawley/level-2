@@ -11,7 +11,7 @@ public class Player {
 	int remainingMoves;
 	AvailAct actions = new AvailAct();
 	Map map = new Map();
-	ArrayList<Item> inventory = new ArrayList<Item>();
+	ArrayList<Item> inventory;
 	boolean isEqual;
 	static Weapon drone = new Weapon("drone",
 			"a dart-equipped drone given to you by the8.\n"
@@ -30,69 +30,80 @@ public class Player {
 			+ "but you took it anyway. you don't know what to do with it.",145);
 	static boolean gameOver = false;
 	static boolean gameWon;
+	static boolean timeOut;
+	static String bombTime;
+	static int seconds;
 	
 	public Player(int x, int y, int health) {
 		this.x = x;
 		this.y = y;
 		this.health = health;
-		this.remainingMoves = 45;
-		while(this.remainingMoves<45){
-			if(this.remainingMoves<45){
-				this.remainingMoves = new Random().nextInt(100);
-			}	
+		this.inventory = new ArrayList<Item>();
+		this.remainingMoves = new Random().nextInt(56);
+		this.remainingMoves += 45;
+		if(this.remainingMoves > 59){
+			seconds = this.remainingMoves - 60;
+			if(seconds<10){
+				bombTime = "02:0" + seconds;
+			}else{
+			bombTime = "02:" + seconds;
+			}
+		}else if(this.remainingMoves == 60){
+			bombTime = "02:00";
 		}
+		else{bombTime = "01:" + this.remainingMoves;}
 	}
 
 	public void setPlayerName(String name) {
 		this.name = name;
 	}
+	
+	private void subtractMove(){
+		this.remainingMoves--;
+		if(this.remainingMoves == 0){
+			gameOver = true;
+			timeOut = true;
+		}
+	}
 
 	public void act(String act) {
-		for(Action action : this.actions.availableActions){
-			isEqual = act.equals(action.hotkey);
-			if (isEqual) break;
-		}
-		if(act.isEmpty()){
-			System.out.println("you're going to need to be more specific than the nothing you just entered.");
-			this.remainingMoves--;
-		}
-		else if(isEqual == false){
-			System.out.println("\nthat's not an option right now. maybe it won't ever be an option. who knows?");
-			this.remainingMoves--;
-		}
-		else if (act.equalsIgnoreCase(actions.moveNorth.hotkey)) {
-			Action.moveNorth(this);
-			this.remainingMoves--;
-			if(this.remainingMoves == 0){
-				gameWon = false;
-				gameOver = true;
+		subtractMove();
+		if(!gameOver){
+			for(Action action : this.actions.availableActions){
+				isEqual = act.equals(action.hotkey);
+				if (isEqual) break;
 			}
-			System.out.println(" ");
-			System.out.println(this.map.map[this.x][this.y].desc);
-		} else if (act.equalsIgnoreCase(actions.moveEast.hotkey)) {
-			Action.moveEast(this);
-			this.remainingMoves--;
-			System.out.println(" ");
-			System.out.println(this.map.map[this.x][this.y].desc);
-		} else if (act.equalsIgnoreCase(actions.moveSouth.hotkey)) {
-			Action.moveSouth(this);
-			this.remainingMoves--;
-			System.out.println(" ");
-			System.out.println(this.map.map[this.x][this.y].desc);
-		} else if (act.equalsIgnoreCase(actions.moveWest.hotkey)) {
-			Action.moveWest(this);
-			this.remainingMoves--;
-			System.out.println(" ");
-			System.out.println(this.map.map[this.x][this.y].desc);
-		}
-		if (act.equals(actions.talk.hotkey)) {
-			System.out.println(" ");
-			Action.talk(this.map.map[this.x][this.y], this);
-		}
-		if (act.equals(actions.inv.hotkey)){
-			Action.printInv(this);
-		}
-		
+			if(act.isEmpty()){
+				System.out.println("you're going to need to be more specific than the nothing you just entered.");
+			}
+			else if(!isEqual){
+				System.out.println("\nthat's not an option right now. maybe it won't ever be an option. who knows?");
+			}
+			else if (act.equalsIgnoreCase(actions.moveNorth.hotkey) && isEqual) {
+				Action.moveNorth(this);
+				System.out.println(" ");
+				System.out.println(this.map.map[this.x][this.y].desc);
+			} else if (act.equalsIgnoreCase(actions.moveEast.hotkey) && isEqual) {
+				Action.moveEast(this);
+				System.out.println(" ");
+				System.out.println(this.map.map[this.x][this.y].desc);
+			} else if (act.equalsIgnoreCase(actions.moveSouth.hotkey) && isEqual) {
+				Action.moveSouth(this);
+				System.out.println(" ");
+				System.out.println(this.map.map[this.x][this.y].desc);
+			} else if (act.equalsIgnoreCase(actions.moveWest.hotkey) && isEqual) {
+				Action.moveWest(this);
+				System.out.println(" ");
+				System.out.println(this.map.map[this.x][this.y].desc);
+			}
+			if (act.equals(actions.talk.hotkey) && isEqual) {
+				System.out.println(" ");
+				Action.talk(this.map.map[this.x][this.y], this);
+			}
+			if (act.equals(actions.inv.hotkey) && isEqual){
+				Action.printInv(this);
+			}
+		}	
 	}
 
 }

@@ -74,7 +74,7 @@ public class Map {
 	static Room dino = new Room(9, 3, "the room you enter is dark, almost too dark to make out the boy\n"
 			+ "standing against the opposite wall. his skin almost glows in the low\n"
 			+ "light, pale even against a white jacket and faded blonde hair, and he\n"
-			+ "moves to cover up the ticking numbers behind him, kicks at the beeping\n" + "thing with a curse.\n"
+			+ "moves to cover up four ticking numbers behind him, kicks at the beeping\n" + "machine with a curse.\n"
 			+ "this kid is... young. seventeen, at the oldest. sixteen, maybe. you don't\n"
 			+ "want to hurt him. you want to send him back to his parents, and maybe tuck\n"
 			+ "him into bed. but you know he's planted a bomb in here, so you're going to\n"
