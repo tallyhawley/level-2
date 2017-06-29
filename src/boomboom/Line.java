@@ -45,9 +45,9 @@ public class Line {
 	static String dk2 = "\nline 2";
 	static String vernon1 = "line 1";
 	static String vernon2 = "\nline 2";
-	static String dino1 = "\"what the hell are you doing here?\" the boy exclaims. he moves to cover what\n"
+	static String dino1 = "\"what the hell are you doing here?\" the boy exclaims. the machine behind him\n"
 			+ "looks like a clock, red numbers counting down from "+ Player.bombTime + ".\n"
-			+ "beep, beep, beep, goes the clock, steady. it reminds you of a hospital.";
+			+ "beep, beep, beep, goes the clock, steady steady. it reminds you of a hospital.";
 	static String dinoWin = "\nthis prints if u win";
 	static String dinoLose = "\nthis prints if u lose";
 }

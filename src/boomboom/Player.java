@@ -31,6 +31,7 @@ public class Player {
 	static boolean gameOver = false;
 	static boolean gameWon;
 	static boolean timeOut;
+	static boolean dinoTOut;
 	static String bombTime;
 	static int seconds;
 	
@@ -41,6 +42,9 @@ public class Player {
 		this.inventory = new ArrayList<Item>();
 		this.remainingMoves = new Random().nextInt(56);
 		this.remainingMoves += 45;
+	}
+
+	public void setTime(){
 		if(this.remainingMoves > 59){
 			seconds = this.remainingMoves - 60;
 			if(seconds<10){
@@ -53,7 +57,7 @@ public class Player {
 		}
 		else{bombTime = "01:" + this.remainingMoves;}
 	}
-
+	
 	public void setPlayerName(String name) {
 		this.name = name;
 	}
@@ -65,9 +69,18 @@ public class Player {
 			timeOut = true;
 		}
 	}
+	
+	public void subtractMoves(){
+		this.remainingMoves-=3;
+		if(this.remainingMoves <= 0){
+			gameOver = true;
+			dinoTOut = true;
+		}
+	}
 
 	public void act(String act) {
 		subtractMove();
+		setTime();
 		if(!gameOver){
 			for(Action action : this.actions.availableActions){
 				isEqual = act.equals(action.hotkey);
