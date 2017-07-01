@@ -118,5 +118,14 @@ public class Player {
 			}
 		}	
 	}
+	
+	public void existsIn(ArrayList<Item> array){
+		for(Item item : array){
+			if(array.get(Integer.parseInt(Action.dinoAct)).equals(item)){
+				Action.exists = true;
+			}
+			if (Action.exists) break;
+		}
+	}
 
 }
