@@ -18,7 +18,7 @@ public class Player {
 					+ "it's made of a sturdy metal you think is titanium and painted a matte black.\n"
 					+ "the motor makes a low whirr when you turn it on.",
 			300, 10);
-	static Weapon dartgun = new Weapon("dart gun","given to you by the8",250,15);
+//	static Weapon dartgun = new Weapon("dart gun","given to you by the8",250,15);
 	static Item radio = new Item("radio","a wireless radio, akin to a walkie-talkie, connecting you to woozi.\n"
 			+ "it has a mic but no speaker, so that he can hear what's going on around\n"
 			+ "you. it makes you a little uncomfortable, but you understand that it's\n"
@@ -34,6 +34,7 @@ public class Player {
 	static boolean dinoTOut;
 	static String bombTime;
 	static int seconds;
+	static int negTime;
 	
 	public Player(int x, int y, int health) {
 		this.x = x;
@@ -52,8 +53,19 @@ public class Player {
 			}else{
 			bombTime = "02:" + seconds;
 			}
-		}else if(this.remainingMoves == 60){
-			bombTime = "02:00";
+		}else if(this.remainingMoves<10){
+			bombTime = "01:0"+ this.remainingMoves;
+		}
+		else if(this.remainingMoves == 0){
+			bombTime = "01:00";
+		}
+		else if(this.remainingMoves < 0){
+			negTime = 60+this.remainingMoves;
+			bombTime = "00:" + negTime;
+		}
+		else if(this.remainingMoves<-50){
+			negTime = 60+this.remainingMoves;
+			bombTime = "00:0"+negTime;
 		}
 		else{bombTime = "01:" + this.remainingMoves;}
 	}
@@ -72,7 +84,7 @@ public class Player {
 	
 	public void subtractMoves(){
 		this.remainingMoves-=3;
-		if(this.remainingMoves <= 0){
+		if(this.remainingMoves <= -60){
 			gameOver = true;
 			dinoTOut = true;
 		}

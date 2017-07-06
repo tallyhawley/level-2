@@ -103,9 +103,11 @@ public class Action {
 	}
 
 	static void printInv(Player player){
-		System.out.println(" ");
 		if(player.inventory.isEmpty()){
+			if(!player.map.map[player.x][player.y].equals(Map.dino)){
+			System.out.println(" ");
 			System.out.println("your inventory is empty right now. collect something and come back later.");
+			}
 		}
 		else{
 			for(Item item : player.inventory){
@@ -114,25 +116,29 @@ public class Action {
 			}
 		}
 	}	
+	
+	static private void defaultMoves(Player player){
+		System.out.println("\nt: talk\ni: use an item\nc: check the time on the bomb");
+		dinoAct = Game.scan.nextLine();
+		player.subtractMoves();
+		player.setTime();
+	}
 
 	static void dinoChallenge(Player player){
-		while(Player.gameOver){
-		System.out.println("\nt: talk\ni: use an item\nc: check the time on the bomb\n");
+		while(!Player.gameOver){
+		System.out.println("\nt: talk\ni: use an item\nc: check the time on the bomb");
 		dinoAct = Game.scan.nextLine();
 		switch(dinoAct){
 			case "t":
-				System.out.println("\"what are you doing, kid?\" you ask, voice soft.\n"
+				System.out.println("\n\"what are you doing, kid?\" you ask, voice soft.\n"
 						+ "he looks at you, expression turning almost sad. \"get out of here,\" he says,\n"
 						+ "quieter.");
-				System.out.println("\nt: talk\ni: use an item\nc: check the time on the bomb\n");
-				dinoAct = Game.scan.nextLine();
-				player.subtractMoves();
-				player.setTime();
+				defaultMoves(player);
 				switch(dinoAct){
-					case "t":
+					case "t": System.out.println("");
 					case "i":
-					case "c": System.out.println("the clock reads " + Player.bombTime + "."); break;
-					default: System.out.println("that's not an option right now. be more careful -\n"
+					case "c": System.out.println("\nthe clock reads " + Player.bombTime + "."); break;
+					default: System.out.println("\nthat's not an option right now. be more careful -\n"
 							+ "you're losing time."); break;
 				}
 				break;
@@ -140,9 +146,10 @@ public class Action {
 				printInv(player);
 				int i;
 				if(player.inventory.isEmpty()){
-					System.out.println("your inventory is empty.");
+					System.out.println("\nyour inventory is empty.");
+					break;
 				}
-				for(i = 0;i<player.inventory.size();i++){
+					for(i = 0;i<player.inventory.size();i++){
 					System.out.println((i+1) + ": "+ player.inventory.get(i).name);
 				}
 				dinoAct = Game.scan.nextLine();
@@ -151,7 +158,19 @@ public class Action {
 					System.out.println("that's not an option right now. be more careful -\nyou're losing time.");
 				}
 				else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.radio)){
-
+					System.out.println("you pull the radio out of your pocket and lower it to the floor behind you,\n"
+							+ "sliding the cord delicately between your fingers. it makes a little\n"
+							+ "click as it touches the floor, and the boy zeroes in on it immediately,\n"
+							+ "eyes narrowing in suspicion.\n"
+							+ "\"who else knows i'm here?\" he asks, wary.");
+					defaultMoves(player);
+					switch(dinoAct){
+						case "t":
+						case "i":
+						case "c": System.out.println("the clock reads " + Player.bombTime + "."); break;
+						default: System.out.println("that's not an option right now. be more careful -\n"
+								+ "you're losing time."); break;
+					}
  				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.drone)){
  					
  				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.diagram)){

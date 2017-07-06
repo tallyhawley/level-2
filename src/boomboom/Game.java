@@ -51,6 +51,11 @@ public class Game {
 				cont = true;
 			}	
 		}
+		if(Player.dinoTOut){
+			System.out.println("the clock ticks to zero, beeping three last times before you, the boy,\n"
+					+ "and everyone else in the building are no more.\n"
+					+ "do you want to try again?");
+		}
 	
 	}
 
