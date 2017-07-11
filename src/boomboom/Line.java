@@ -29,8 +29,7 @@ public class Line {
 			+ "if something goes wrong, or you're in trouble, i'll call you or flash\n"
 			+ "the lights.\"\n"
 			+ "you nod, taking the radio.\n"
-			+ "\"good luck, kid,\" he says.\n\n"
-			+ "you have received \"radio\" from woozi.";
+			+ "\"good luck, kid,\" he says.";
 	static String the81 = "you can't quite tell whether this guy is alive or not, when suddenly he speaks\n"
 			+ "up, voice near a whisper and higher than you expect it to be.\n"
 			+ "\"hey,\" he says. \"are you "+Game.player.name+"?\"\n"
@@ -38,7 +37,14 @@ public class Line {
 			+ "\"s. coups told me a little bit about your job, if that's alright.\n"
 			+ "nothing much, just enough that i can help you.\"\n"
 			+ "he holds out his hand for you to shake.";
-	static String the82 = "\nline 2";
+	static String the82 = "\nyou grip his hand, shaking it once. curt and professional. perfect.\n"
+			+ "\"i'm the8,\" he says. \"director of weaponry, defense, and security.\n"
+			+ "basically, i'm in charge of making sure that even if bad guys DO get in,\n"
+			+ "then they don't get OUT without a police escort.\"\n"
+			+ "you laugh, nervous. why are you nervous? you don't know.\n"
+			+ "as you're panicking, a web of lasers blinks to life in front of you.\n"
+			+ "oh dear";
+	//TODO DELETE THat
 	static String kwan1 = "line 1";
 	static String kwan2 = "\nline 2";
 	static String dk1 = "line 1";

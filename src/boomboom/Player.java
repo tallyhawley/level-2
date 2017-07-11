@@ -93,36 +93,37 @@ public class Player {
 	public void act(String act) {
 		subtractMove();
 		setTime();
+		System.out.println("\nyou have " + remainingMoves + " moves remaining.");
 		if(!gameOver){
 			for(Action action : this.actions.availableActions){
 				isEqual = act.equals(action.hotkey);
 				if (isEqual) break;
 			}
 			if(act.isEmpty()){
-				System.out.println("you're going to need to be more specific than the nothing you just entered.");
+				System.out.println("\nyou're going to need to be more specific than the nothing you just entered.");
 			}
 			else if(!isEqual){
 				System.out.println("\nthat's not an option right now. maybe it won't ever be an option. who knows?");
 			}
 			else if (act.equalsIgnoreCase(actions.moveNorth.hotkey) && isEqual) {
 				Action.moveNorth(this);
-				System.out.println(" ");
+				System.out.println();
 				System.out.println(this.map.map[this.x][this.y].desc);
 			} else if (act.equalsIgnoreCase(actions.moveEast.hotkey) && isEqual) {
 				Action.moveEast(this);
-				System.out.println(" ");
+				System.out.println();
 				System.out.println(this.map.map[this.x][this.y].desc);
 			} else if (act.equalsIgnoreCase(actions.moveSouth.hotkey) && isEqual) {
 				Action.moveSouth(this);
-				System.out.println(" ");
+				System.out.println();
 				System.out.println(this.map.map[this.x][this.y].desc);
 			} else if (act.equalsIgnoreCase(actions.moveWest.hotkey) && isEqual) {
 				Action.moveWest(this);
-				System.out.println(" ");
+				System.out.println();
 				System.out.println(this.map.map[this.x][this.y].desc);
 			}
 			if (act.equals(actions.talk.hotkey) && isEqual) {
-				System.out.println(" ");
+				System.out.println();
 				Action.talk(this.map.map[this.x][this.y], this);
 			}
 			if (act.equals(actions.inv.hotkey) && isEqual){
@@ -133,7 +134,7 @@ public class Player {
 	
 	public void existsIn(ArrayList<Item> array){
 		for(Item item : array){
-			if(array.get(Integer.parseInt(Action.dinoAct)).equals(item)){
+			if(array.get(Integer.parseInt(Dino.dinoAct)).equals(item)){
 				Action.exists = true;
 			}
 			if (Action.exists) break;

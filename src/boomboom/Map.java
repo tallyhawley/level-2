@@ -142,7 +142,7 @@ public class Map {
 			+ "to your east is an elevator door. it seems like it's slightly open.\n" + "where will you go?", 11,
 			false);
 	static Room elevator = new Room(2, 7,
-			"as you enter the elevator, you come face to face with an... unfairly attractive\n"
+					"as you enter the elevator, you come face to face with an... unfairly attractive\n"
 					+ "person. he looks sixteen, but knowing half of the people here he's probably\n"
 					+ "more like eighteen. you check him out as discreetly as you can. he's dressed\n"
 					+ "in a black trenchcoat, buttoned, over a turtleneck. he's probably the only\n"
