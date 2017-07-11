@@ -60,14 +60,14 @@ public class Player {
 			bombTime = "01:00";
 		}
 		else if(this.remainingMoves < 0){
-			negTime = 60+this.remainingMoves;
+			negTime = this.remainingMoves + 60;
 			bombTime = "00:" + negTime;
 		}
 		else if(this.remainingMoves<-50){
-			negTime = 60+this.remainingMoves;
+			negTime = this.remainingMoves + 60;
 			bombTime = "00:0"+negTime;
 		}
-		else{bombTime = "01:" + this.remainingMoves;}
+		else if(this.remainingMoves > 10){bombTime = "01:" + this.remainingMoves;}
 	}
 	
 	public void setPlayerName(String name) {
@@ -76,6 +76,7 @@ public class Player {
 	
 	private void subtractMove(){
 		this.remainingMoves--;
+		setTime();
 		if(this.remainingMoves == 0){
 			gameOver = true;
 			timeOut = true;
@@ -84,6 +85,7 @@ public class Player {
 	
 	public void subtractMoves(){
 		this.remainingMoves-=3;
+		setTime();
 		if(this.remainingMoves <= -60){
 			gameOver = true;
 			dinoTOut = true;
@@ -92,7 +94,6 @@ public class Player {
 
 	public void act(String act) {
 		subtractMove();
-		setTime();
 		System.out.println("\nyou have " + remainingMoves + " moves remaining.");
 		if(!gameOver){
 			for(Action action : this.actions.availableActions){
