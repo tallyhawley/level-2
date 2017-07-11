@@ -52,9 +52,25 @@ public class Game {
 			}	
 		}
 		if(Player.dinoTOut){
-			System.out.println("the clock ticks to zero, beeping three last times before you, the boy,\n"
+			System.out.println("\nthe clock ticks to zero, beeping three last times before you, the boy,\n"
 					+ "and everyone else in the building are no more.\n"
 					+ "do you want to try again?");
+			System.out.println("\nenter \"y\" to try again. enter any other key to quit.");
+			String yn = scan.nextLine();
+			if(yn.equals("y")){
+				System.out.println("  ");
+				cont = true;
+			}	
+		}
+		if(!Player.gameWon){
+			System.out.println("\nmission failed.\n"
+					+ "do you want to try again?");
+			System.out.println("\nenter \"y\" to try again. enter any other key to quit.");
+			String yn = scan.nextLine();
+			if(yn.equals("y")){
+				System.out.println("  ");
+				cont = true;
+			}	
 		}
 	
 	}

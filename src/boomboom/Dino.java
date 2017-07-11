@@ -38,8 +38,7 @@ public class Dino {
 						case "t": 
 							//TODO PATH TALK-TALK
 							System.out.println("1: \"i'm not leaving until you disable that.\"\n"
-											+ "2: \"i'm just here to help.\"\n"
-											+ "3: \"don't do this.\"");
+											+ "2: \"i'm just here to help.\"\n");
 							try{
 							dinoLine = Game.scan.nextInt();
 							}catch(InputMismatchException e){
@@ -49,7 +48,7 @@ public class Dino {
 							if(dinoLine == 1){
 								//TODO PATH TALK-TALK-1
 								System.out.println("\"i'm not leaving until you disable that,\" you say.\n"
-										+ "the kids smiles the empty smile of a man sentenced to death.\n"
+										+ "the kid smiles the empty smile of a man sentenced to death.\n"
 										+ "\"if you don't leave now, you won't have a chance to leave\n"
 										+ "later,\" he says, cryptic.");
 								while(!Player.gameOver){
@@ -57,17 +56,39 @@ public class Dino {
 									switch(dinoAct){
 										case "t":
 										//TODO PATH TALK-TALK-1-TALK
-											
+											System.out.println("1: \"is that a threat?\"\n"
+													+ "2: \"what do you mean?\"");
+											try{
+												dinoLine = Game.scan.nextInt();
+											}catch(InputMismatchException e){
+												System.out.println("that's not an option. be careful - you're running out of time."); break;
+											}
+											if(dinoLine == 1){
+												//TODO PATH TALK-TALK-1-TALK-1
+												System.out.println("you take a step toward him.\n"
+														+ "\"is that a threat?\" you ask. your voice is low.\n"
+														+ "the kid laughs. he reaches into his pocket and pulls out a little remote.\n"
+														+ "\"it could be!\"\n"
+														+ "you take another step.\"don't do this.\"\n"
+														+ "his finger hovers right over the big button in the middle.\n"
+														+ "\"who are you to stop me?\" he says, right before he presses down\n"
+														+ "and you two are no more.\n"
+														+ "you never even learned his name.");
+												Player.gameOver = true; Player.gameWon = false;
+											}else if(dinoLine == 2){
+												//TODO PATH TALK-TALK-1-TALK-2
+											}else{
+												System.out.println("that's not an option. be careful - you're running out of time.");
+											}
 										case "i": 
 										//TODO PATH TALK-TALK-1-ITEM
 											
 											Action.printInv(player);
-											int i;
 											if(player.inventory.isEmpty()){
 												System.out.println("\nyour inventory is empty.");
 												break;
 											}
-												for(i = 0;i<player.inventory.size();i++){
+												for(int i = 0;i<player.inventory.size();i++){
 												System.out.println((i+1) + ": "+ player.inventory.get(i).name);
 											}
 											dinoAct = Game.scan.nextLine();
@@ -111,9 +132,6 @@ public class Dino {
 										+ "you don't know.");
 								defaultMoves(player);
 							}
-							else if(dinoLine == 3){
-							//TODO PATH TALK-TALK-3
-							}
 							else{
 								System.out.println("that's not an option. be careful - you're running out of time.");
 								break;
@@ -122,12 +140,11 @@ public class Dino {
 						case "i":
 						//TODO PATH TALK-ITEM
 							Action.printInv(player);
-							int i;
 							if(player.inventory.isEmpty()){
 								System.out.println("\nyour inventory is empty.");
 								break;
 							}
-								for(i = 0;i<player.inventory.size();i++){
+								for(int i = 0;i<player.inventory.size();i++){
 								System.out.println((i+1) + ": "+ player.inventory.get(i).name);
 							}
 							dinoAct = Game.scan.nextLine();
@@ -166,12 +183,11 @@ public class Dino {
 			case "i":
 			//TODO PATH ITEM
 				Action.printInv(player);
-				int i;
 				if(player.inventory.isEmpty()){
 					System.out.println("\nyour inventory is empty.");
 					break;
 				}
-					for(i = 0;i<player.inventory.size();i++){
+					for(int i = 0;i<player.inventory.size();i++){
 					System.out.println((i+1) + ": "+ player.inventory.get(i).name);
 				}
 				dinoAct = Game.scan.nextLine();
