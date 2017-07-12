@@ -37,13 +37,19 @@ public class Line {
 			+ "\"s. coups told me a little bit about your job, if that's alright.\n"
 			+ "nothing much, just enough that i can help you.\"\n"
 			+ "he holds out his hand for you to shake.";
-	static String the82 = "\nyou grip his hand, shaking it once. curt and professional. perfect.\n"
+	static String the82 = "\n"
+			+ "you grip his hand, shaking it once. curt and professional. perfect.\n"
 			+ "\"i'm the8,\" he says. \"director of weaponry, defense, and security.\n"
 			+ "basically, i'm in charge of making sure that even if bad guys DO get in,\n"
 			+ "then they don't get OUT without a police escort.\"\n"
 			+ "you laugh, nervous. why are you nervous? you don't know.\n"
 			+ "as you're panicking, a web of lasers blinks to life in front of you.\n"
-			+ "oh dear";
+			+ "\"don't worry about it,\" the8 says. \"it's just because woozi probably\n"
+			+ "hasn't registered you in the system.\"\n"
+			+ "you point at the neon. \"do i still have to get through that?\"\n"
+			+ "the8 laughs. \"yeah, man. don't worry, it's not actually that hard.\n"
+			+ "it just feels that way because it's so bright.\"\n"
+			+ "you nod. okay then, that's not as scary.";
 	//TODO DELETE THat
 	static String kwan1 = "line 1";
 	static String kwan2 = "\nline 2";
@@ -52,8 +58,6 @@ public class Line {
 	static String vernon1 = "line 1";
 	static String vernon2 = "\nline 2";
 	static String dino1 = "\"what the hell are you doing here?\" the boy exclaims. the machine behind him\n"
-			+ "looks like a clock, red numbers counting down from "+ Player.bombTime + ".\n"
+			+ "looks like a clock, red numbers counting down to something. something bad.\n"
 			+ "beep, beep, beep, goes the clock, steady steady. it reminds you of a hospital.";
-	static String dinoWin = "\nthis prints if u win";
-	static String dinoLose = "\nthis prints if u lose";
 }

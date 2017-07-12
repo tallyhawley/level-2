@@ -32,7 +32,7 @@ public class Player {
 	static boolean gameWon;
 	static boolean timeOut;
 	static boolean dinoTOut;
-	static String bombTime;
+	String bombTime;
 	static int seconds;
 	static int negTime;
 	
@@ -49,25 +49,25 @@ public class Player {
 		if(this.remainingMoves > 59){
 			seconds = this.remainingMoves - 60;
 			if(seconds<10){
-				bombTime = "02:0" + seconds;
+				this.bombTime = "02:0" + seconds;
 			}else{
-			bombTime = "02:" + seconds;
+			this.bombTime = "02:" + seconds;
 			}
 		}else if(this.remainingMoves<10){
-			bombTime = "01:0"+ this.remainingMoves;
+			this.bombTime = "01:0"+ this.remainingMoves;
 		}
 		else if(this.remainingMoves == 0){
-			bombTime = "01:00";
+			this.bombTime = "01:00";
 		}
 		else if(this.remainingMoves < 0){
 			negTime = this.remainingMoves + 60;
-			bombTime = "00:" + negTime;
+			this.bombTime = "00:" + negTime;
 		}
 		else if(this.remainingMoves<-50){
 			negTime = this.remainingMoves + 60;
-			bombTime = "00:0"+negTime;
+			this.bombTime = "00:0"+negTime;
 		}
-		else if(this.remainingMoves > 10){bombTime = "01:" + this.remainingMoves;}
+		else if(this.remainingMoves > 10){this.bombTime = "01:" + this.remainingMoves;}
 	}
 	
 	public void setPlayerName(String name) {

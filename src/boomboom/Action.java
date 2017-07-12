@@ -98,7 +98,9 @@ public class Action {
 			System.out.println(Line.the82);
 			if(!containsItem(player.inventory,Player.drone)){
 				player.inventory.add(Player.drone);
-				System.out.println("\nyou have received \"drone\" from the8.");
+				System.out.println("\"oh, wait,\" the8 says. \"before you go, take this. it could help.\n"
+			+ "even if it doesn't, it's good to be prepared, yeah?\"\n"
+						+ "\nyou have received \"drone\" from the8.");
 			}
 			finish = true;
 		}
@@ -111,18 +113,9 @@ public class Action {
 		}
 		//
 		if (room == Map.dino) {
+			player.setTime();
 			System.out.println(Line.dino1);
 			Dino.dinoChallenge(player);
-		}
-		else if (room == Map.dino && Player.gameWon) {
-			System.out.println(Line.dinoWin);
-			finish = true;
-			Player.gameOver = true;
-		}
-		else if(room == Map.dino && !Player.gameWon){
-			System.out.println(Line.dinoLose);
-			finish = true;
-			Player.gameOver = true;
 		}
 	}
 
