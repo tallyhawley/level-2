@@ -81,34 +81,66 @@ public class Dino {
 													switch(dinoAct){
 													case "t":
 														//TODO PATH TALK-TALK-1-TALK-2-TALK
+														System.out.println("\n"
+																+ "\"what did they do to you?\" you ask, soft.\n"
+																+ "\"the kid smiles again but it's weak, eyes welling up with tears.\n"
+																+ "\"they -\" he points toward the door and, presumably, the people\n"
+																+ "beyond it. \"- didn't do anything. we were friends.\n"
+																+ "\"it was the goddamn company! i poured my heart, my soul into this\n"
+																+ "job, and they cast me away like nothing!\" at this point, he's really\n"
+																+ "crying, tears rolling down his cheeks as he wipes at them futilely.\n"
+																+ "\"they ruined my life and you can bet your ass i'm going to -\"\n"
+																+ "he sobs. \"- i'm going to ruin theirs too! they can't just...\n"
+																+ "they can't just call me in after four years of nothing but good work\n"
+																+ "and results and say 'oh, dino, by the way - you're fired!'\n"
+																+ "it doesn't fucking work that way, pledis!\"\n"
+																+ "\"uh-\" you start, when dino pulls a remote from his pocket, thumb\n"
+																+ "shaking over the big button in the middle.\n"
+																+ "\"wait!\" you yell, and he pauses.");
 														while(!Player.gameOver){
-														System.out.println("\nwhat will you say?\n"
-																+ "1: \"what did they do to you?\"\n"
-																+ "2: \"what button?\"");
-														dinoAct = Game.scan.nextLine();
-														if(dinoAct.equals("1")){
-															System.out.println("\n"
-																	+ "\"what did they do to you?\" you ask, soft.\n"
-																	+ "\"the kid smiles again but it's weak, eyes welling up with tears.\n"
-																	+ "\"they -\" he points toward the door and, presumably, the people\n"
-																	+ "beyond it. \"- didn't do anything. we were friends.\n"
-																	+ "\"it was the goddamn company! i poured my heart, my soul into this\n"
-																	+ "job, and they cast me away like nothing!\" at this point, he's really\n"
-																	+ "crying, tears rolling down his cheeks as he wipes at them futilely.\n"
-																	+ "\"they ruined my life and you can bet your ass i'm going to -\"\n"
-																	+ "sob. \"- i'm going to ruin theirs too! they can't just...\n"
-																	+ "they can't just call me in after four years of nothing but good work\n"
-																	+ "and results and say 'oh, dino, by the way - you're fired!'\n"
-																	+ "it doesn't fucking work that way, pledis!\"");
+															defaultMoves(player);
+															switch(dinoAct){
+															case "t":
+															case "i":
+																Action.printInv(player);
+																if(player.inventory.isEmpty()){
+																	System.out.println("\nyour inventory is empty.");
+																	break;
+																}
+																	for(int i = 0;i<player.inventory.size();i++){
+																	System.out.println((i+1) + ": "+ player.inventory.get(i).name);
+																}
+																dinoAct = Game.scan.nextLine();
+																player.existsIn(player.inventory);
+																if(!Action.exists){
+																	System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
+																}
+																else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
+																	System.out.println("");
+																	defaultMoves(player);
+																	while(!Player.gameOver){
+																		switch(dinoAct){
+																			case "t":
+																			case "i":
+																			case "c": checkTime(player); break;
+																			default: defaultChoice(player); break;
+																		}
+																	}
+												 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
+												 					
+												 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
+												 					
+												 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
+												 					
+												 				}
+																break;
+															case "c":
+															}
 														}
-														else if(dinoAct.equals("2")){
-															
-														}else{
-															
-														}
-														}
+														break;
 													case "i":
 														
+														break;
 													case "c": checkTime(player); break;
 													default: defaultChoice(player); break;
 													}
@@ -134,12 +166,13 @@ public class Dino {
 											if(!Action.exists){
 												System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
 											}
-											else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.radio)){
+											else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
 												System.out.println("\nyou pull the radio out of your pocket and lower it to the floor behind you,\n"
 														+ "sliding the cord delicately between your fingers. it makes a little\n"
 														+ "click as it touches the floor, and the boy zeroes in on it immediately,\n"
 														+ "eyes narrowing in suspicion.\n"
 														+ "\"who else knows i'm here?\" he asks, wary.");
+												player.inventory.remove(Player.radio);
 												defaultMoves(player);
 												while(!Player.gameOver){
 													switch(dinoAct){
@@ -149,12 +182,12 @@ public class Dino {
 														default: defaultChoice(player); break;
 													}
 												}
-							 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.drone)){
-							 					
-							 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.diagram)){
-							 					
-							 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.bracelet)){
-							 					
+							 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
+							 					player.inventory.remove(Player.drone);
+							 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
+							 					player.inventory.remove(Player.diagram);
+							 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
+							 					player.inventory.remove(Player.bracelet);
 							 				}
 											break;
 										case "c": checkTime(player); break;
@@ -192,7 +225,7 @@ public class Dino {
 							if(!Action.exists){
 								System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
 							}
-							else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.radio)){
+							else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
 								System.out.println("\nyou pull the radio out of your pocket and lower it to the floor behind you,\n"
 										+ "sliding the cord delicately between your fingers. it makes a little\n"
 										+ "click as it touches the floor, and the boy zeroes in on it immediately,\n"
@@ -207,11 +240,11 @@ public class Dino {
 										default: defaultChoice(player); break;
 									}
 								}
-			 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.drone)){
+			 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
 			 					
-			 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.diagram)){
+			 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
 			 					
-			 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.bracelet)){
+			 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
 			 					
 			 				}
 							break;
@@ -235,7 +268,7 @@ public class Dino {
 				if(!Action.exists){
 					System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
 				}
-				else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.radio)){
+				else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
 				//TODO PATH ITEM-RADIO
 					System.out.println("\nyou pull the radio out of your pocket and lower it to the floor behind you,\n"
 							+ "sliding the cord delicately between your fingers. it makes a little\n"
@@ -253,11 +286,11 @@ public class Dino {
 							default: defaultChoice(player); break;
 						}
 					}
- 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.drone)){
+ 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
  					//TODO PATH ITEM-DRONE
- 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.diagram)){
+ 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
  					//TODO PATH ITEM-DIAGRAM
- 				}else if(player.inventory.get(Integer.parseInt(dinoAct)).equals(Player.bracelet)){
+ 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
  					//TODO PATH ITEM-BRACELET
  				}
 				break;
