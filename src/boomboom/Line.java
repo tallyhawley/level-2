@@ -50,7 +50,7 @@ public class Line {
 			+ "the8 laughs. \"yeah, man. don't worry, it's not actually that hard.\n"
 			+ "it just feels that way because it's so bright.\"\n"
 			+ "you nod. okay then, that's not as scary.";
-	//TODO DELETE THat
+	//TODO LINES
 	static String kwan1 = "line 1";
 	static String kwan2 = "\nline 2";
 	static String dk1 = "line 1";

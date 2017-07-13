@@ -1,7 +1,5 @@
 package boomboom;
 
-import java.io.IOException;
-
 public class Runner {
 
 	@SuppressWarnings("unused")

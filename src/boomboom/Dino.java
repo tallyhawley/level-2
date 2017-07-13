@@ -1,7 +1,5 @@
 package boomboom;
 
-import java.util.InputMismatchException;
-
 public class Dino {
 	static String dinoAct;
 	
@@ -107,7 +105,8 @@ public class Dino {
 																	System.out.println("\nyour inventory is empty.");
 																	break;
 																}
-																	for(int i = 0;i<player.inventory.size();i++){
+																System.out.println("\npick an item");
+																for(int i = 0;i<player.inventory.size();i++){
 																	System.out.println((i+1) + ": "+ player.inventory.get(i).name);
 																}
 																dinoAct = Game.scan.nextLine();
@@ -117,15 +116,6 @@ public class Dino {
 																}
 																else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
 																	System.out.println("");
-																	defaultMoves(player);
-																	while(!Player.gameOver){
-																		switch(dinoAct){
-																			case "t":
-																			case "i":
-																			case "c": checkTime(player); break;
-																			default: defaultChoice(player); break;
-																		}
-																	}
 												 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
 												 					
 												 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
@@ -158,7 +148,8 @@ public class Dino {
 												System.out.println("\nyour inventory is empty.");
 												break;
 											}
-												for(int i = 0;i<player.inventory.size();i++){
+											System.out.println("\npick an item");
+											for(int i = 0;i<player.inventory.size();i++){
 												System.out.println((i+1) + ": "+ player.inventory.get(i).name);
 											}
 											dinoAct = Game.scan.nextLine();
@@ -173,8 +164,8 @@ public class Dino {
 														+ "eyes narrowing in suspicion.\n"
 														+ "\"who else knows i'm here?\" he asks, wary.");
 												player.inventory.remove(Player.radio);
-												defaultMoves(player);
 												while(!Player.gameOver){
+													defaultMoves(player);
 													switch(dinoAct){
 														case "t":
 														case "i":
@@ -260,7 +251,8 @@ public class Dino {
 					System.out.println("\nyour inventory is empty.");
 					break;
 				}
-					for(int i = 0;i<player.inventory.size();i++){
+				System.out.println("\npick an item");
+				for(int i = 0;i<player.inventory.size();i++){
 					System.out.println((i+1) + ": "+ player.inventory.get(i).name);
 				}
 				dinoAct = Game.scan.nextLine();
@@ -275,8 +267,8 @@ public class Dino {
 							+ "click as it touches the floor, and the boy zeroes in on it immediately,\n"
 							+ "eyes narrowing in suspicion.\n"
 							+ "\"who else knows i'm here?\" he asks, wary.");
-					defaultMoves(player);
 					while(!Player.gameOver){
+						defaultMoves(player);
 						switch(dinoAct){
 							case "t":
 							//TODO PATH ITEM-RADIO-TALK
