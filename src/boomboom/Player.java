@@ -18,7 +18,6 @@ public class Player {
 					+ "it's made of a sturdy metal you think is titanium and painted a matte black.\n"
 					+ "the motor makes a low whirr when you turn it on.",
 			300, 10);
-//	static Weapon dartgun = new Weapon("dart gun","given to you by the8",250,15);
 	static Item radio = new Item("radio","a wireless radio, akin to a walkie-talkie, connecting you to woozi.\n"
 			+ "it has a mic but no speaker, so that he can hear what's going on around\n"
 			+ "you. it makes you a little uncomfortable, but you understand that it's\n"

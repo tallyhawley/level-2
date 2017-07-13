@@ -63,7 +63,7 @@ public class Action {
 			System.out.println(Line.woozi1);
 			nextLine(player);
 			System.out.println(Line.woozi2);
-			if(!containsItem(player.inventory,player.radio)){
+			if(!containsItem(player.inventory,Player.radio)){
 				player.inventory.add(Player.radio);	
 				System.out.println("\nyou have received \"radio\" from woozi.");
 			}

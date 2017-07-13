@@ -117,11 +117,18 @@ public class Dino {
 																else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
 																	System.out.println("");
 												 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
-												 					
+												 					System.out.println();
 												 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
-												 					
+												 					System.out.println();
 												 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
-												 					
+												 					System.out.println("\n"
+												 							+ "you fiddle with the bracelet around your wrist. the soft threads whisper against\n"
+												 							+ "your skin, and dino looks up at it.\n"
+												 							+ "\"is that...\" he sniffles. \"is that seungkwan's?\"\n"
+												 							+ "you nod nervously. no point in lying to him.\n"
+												 							+ "dino backs up to the wall and slides down, resting his forehead on his knees.\n"
+												 							+ "he's crying again.\n"
+												 							+ "\"i ");
 												 				}
 																break;
 															case "c":
