@@ -42,7 +42,7 @@ public class Map {
 			3, true);
 	static Room todk = new Room(7, 7,
 			"next to you, to the west, another door. it's a dusty colour, like someone brought it in from the desert.\n"
-					+ "the label, gold plated and shiny, reads \"DK || LEE SEOKMIN\", and underneath, \"COMMUNICATIONS & PLANNING\".\n"
+					+ "the label, gold plated and shiny, reads \"DK | DOKYEOM\", and underneath, \"COMMUNICATIONS & PLANNING\".\n"
 					+ "on your other side is a sort of map of the building, smudged and practically indecipherable\n"
 					+ "under the glass. you can make out a \"BOO SEUNGKWAN\" somewhere in the top right,\n"
 					+ "and a \"VERNON HANSOL CHOI\", on the left. the red of the \"YOU ARE HERE\" symbol barely\n"
@@ -63,7 +63,7 @@ public class Map {
 					+ "\"hansol's\", with another heart.",
 			10, false);
 	static Room the8 = new Room(1, 3,
-			"the hallway brightens slightly. it holds a foreboding aura, neon\n"
+					"the hallway brightens slightly. it holds a foreboding aura, bright lights\n"
 					+ "flashing in front and the welcoming light of the lobby behind. you can\n"
 					+ "see the sillouhette of a young man aged nineteen or twenty. light glints\n"
 					+ "off of glossy red hair, illuminates dark eyes and slightly pointed ears.\n"
