@@ -53,7 +53,11 @@ public class Line {
 	//TODO LINES
 	static String kwan1 = "line 1";
 	static String kwan2 = "\nline 2";
-	static String dk1 = "\"hi!\" he says, cheerful.";
+	static String dk1 = "\"hi!\" he says, cheerful. \"i'm dk!\"\n"
+			+ "his happiness is contagious. you find yourself smiling as you shake his\n"
+			+ "hand."
+			+ "\"i'm " + Game.player.name + ",\" you say. \"nice to meet you.\"\n"
+			+ "his smile widens.";
 	static String dk2 = "\nline 2";
 	static String vernon1 = "line 1";
 	static String vernon2 = "\nline 2";
