@@ -51,9 +51,10 @@ public class Game {
 				cont = true;
 			}	
 		}
-		if(Player.dinoTOut){
+		else if(Player.dinoTOut){
 			System.out.println("\nthe clock ticks to zero, beeping three last times before you, the boy,\n"
 					+ "and everyone else in the building are no more.\n"
+					+ "mission failed.\n"
 					+ "do you want to try again?");
 			System.out.println("\nenter \"y\" to try again. enter any other key to quit.");
 			String yn = scan.nextLine();
@@ -62,7 +63,7 @@ public class Game {
 				cont = true;
 			}	
 		}
-		if(!Player.gameWon){
+		else if(!Player.gameWon){
 			System.out.println("\nmission failed.\n"
 					+ "do you want to try again?");
 			System.out.println("\nenter \"y\" to try again. enter any other key to quit.");
@@ -71,6 +72,16 @@ public class Game {
 				System.out.println("  ");
 				cont = true;
 			}	
+		}
+		else if(Player.gameWon){
+			System.out.println("\nmission success!\n"
+					+ "do you want to play again?");
+			System.out.println("\nenter \"y\" to try again. enter any other key to quit.");
+			String yn = scan.nextLine();
+			if(yn.equals("y")){
+				System.out.println();
+				cont = true;
+			}
 		}
 	
 	}

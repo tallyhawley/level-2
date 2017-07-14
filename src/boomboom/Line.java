@@ -50,17 +50,47 @@ public class Line {
 			+ "the8 laughs. \"yeah, man. don't worry, it's not actually that hard.\n"
 			+ "it just feels that way because it's so bright.\"\n"
 			+ "you nod. okay then, that's not as scary.";
-	//TODO LINES
-	static String kwan1 = "line 1";
-	static String kwan2 = "\nline 2";
+	static String kwan1 = "you smile awkwardly. the boy beams.\n"
+			+ "\"hi!\" he exclaims. \"what's your name?\"\n"
+			+ "you laugh a little. who has this much energy, ever?\n"
+			+ "\"i'm " + Game.player.name + ",\" you respond. \"what's yours?\"\n"
+			+ "the boy's smile grows, if that's possible. \"i'm seungkwan! i just kind\n"
+			+ "of live here. s. coups has been taking care of me since i was, like, three.\n"
+			+ "technically, though, i work in advertising. we don't even have anything to\n"
+			+ "advertise! we don't sell anything!\" he says.\n"
+			+ "he's so pure, you think. you hope nothing happens to him.\n"
+			+ "\"anyway,\" he continues. \"why are you even here? i didn't hear about anything\n"
+			+ "new happening.\"";
+	static String kwan2 = "\n\"there's been reports of a... problem in the building,\" you say.\n"
+			+ "you don't want to scare him. \"i'm just here to deal with it.\"\n"
+			+ "his smile turns into something worried. \"hey, be careful!\"\n"
+			+ "you laugh. \"why?\"\n"
+			+ "\"i wouldn't want you to get hurt!\" he says.";
 	static String dk1 = "\"hi!\" he says, cheerful. \"i'm dk!\"\n"
 			+ "his happiness is contagious. you find yourself smiling as you shake his\n"
 			+ "hand."
 			+ "\"i'm " + Game.player.name + ",\" you say. \"nice to meet you.\"\n"
-			+ "his smile widens.";
-	static String dk2 = "\nline 2";
-	static String vernon1 = "line 1";
-	static String vernon2 = "\nline 2";
+			+ "his smile widens.\n"
+			+ "\"i'm in charge of planning and communications,\" he says. \"so if you need\n"
+			+ "any explanations of what we're doing here at pledis, you know who to ask!\"";
+	static String dk2 = "\n"
+			+ "you chuckle. \"yep...\"\n"
+			+ "dk stands up. \"don't be so awkward, man! we're all friends here.\"\n"
+			+ "you smile. \"okay, dude.\" suddenly, you remember something.\n"
+			+ "\"hey, do you have a floor plan of this building? i could use it to figure\n"
+			+ "out where mystery man could be.\"\n"
+			+ "dk pulls out a diagram, covered in blocky text and words that you can't seem\n"
+			+ "to understand.";
+	static String vernon1 = "you wave awkwardly. the guy smiles.\n"
+			+ "\"hey,\" he says. even his voice is nice. holy hell. uh-\n"
+			+ "\"hi,\" you reply."
+			+ "the guy holds his hand out for you to shake. \"i'm vernon. i'm in the neuroscience\n"
+			+ "department. and costuming, but that's less important.\"\n"
+			+ "you grip his hand, hoping your palms aren't too sweaty.\n"
+			+ "\"" + Game.player.name + ",\" you say. \"i'm a freelance investigator. nice to meet\n"
+			+ "you.\"\n"
+			+ "vernon laughs. \"nice to meet you too, man.\"\n"
+			+ "he glances at his watch. \"oh shit, i've gotta go. work calls! bye, man!\"";
 	static String dino1 = "\"what the hell are you doing here?\" the boy exclaims. the machine behind him\n"
 			+ "looks like a clock, red numbers counting down to something. something bad.\n"
 			+ "beep, beep, beep, goes the clock, steady steady. it reminds you of a hospital.";

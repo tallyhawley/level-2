@@ -76,6 +76,8 @@ public class Action {
 			System.out.println(Line.kwan2);
 			if(!containsItem(player.inventory,Player.bracelet)){
 				player.inventory.add(Player.bracelet);
+				System.out.println("\"here, take this,\" he says, handing you a little woven bracelet.\n"
+						+ "\"it's so that you remember me, and you come back after you're done!");
 				System.out.println("\nyou have received \"bracelet\" from seungkwan.");
 			}
 			finish = true;
@@ -87,6 +89,7 @@ public class Action {
 			System.out.println(Line.dk2);
 			if(!containsItem(player.inventory,Player.diagram)){
 				player.inventory.add(Player.diagram);
+				System.out.println("\"dude, take this with you,\" dk says. \"it could help.\"");
 				System.out.println("\nyou have received \"diagram\" from dk.");
 			}
 			finish = true;
@@ -107,8 +110,17 @@ public class Action {
 		//
 		if (room == Map.elevator) {
 			System.out.println(Line.vernon1);
-			nextLine(player);
-			System.out.println(Line.vernon2);
+			Map.directory.dir = 5;
+			Map.directory.desc = "to your side is a directory. all it reads is:\n"
+					+ "- S. COUPS: project lead, biorhythmics. east hall.\n" 
+					+ "- WOOZI: monitoring, analytics. east hall.\n"
+					+ "- DK: planning, communications, topography. southeast hall.\n"
+					+ "- THE8: weaponry, defense, security. north hall.\n" 
+					+ "- BOO SEUNGKWAN: advertising. northeast hall.\n"
+					+ "- VERNON: costuming, neurosciences. south hall.\n" 
+					+ "and, crossed out:\n"
+					+ "- DINO: mathematics, physics, chemistry. northeast hall.\n"
+					+ "where will you go?";
 			finish = true;
 		}
 		//
