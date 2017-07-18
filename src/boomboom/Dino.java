@@ -109,6 +109,7 @@ public class Dino {
 																		+ "\"tell them i'm sorry, will you?\" dino asks. at your nod, he leaves, slipping\n"
 																		+ "quietly through a trapdoor in the floor.");
 																Player.gameOver = true; Player.gameWon = true;
+																break;
 															case "i":
 																Action.printInv(player);
 																if(player.inventory.isEmpty()){
@@ -303,7 +304,234 @@ public class Dino {
 										+ "\"i don't need help,\" he spits. \"just leave.\"\n"
 										+ "venom laces his words. perhaps it's spite at your request to help.\n"
 										+ "you don't know.");
-								defaultMoves(player);
+								while(!Player.gameOver) {
+									defaultMoves(player);
+									switch(dinoAct) {
+									case "t":
+										System.out.println("\n"
+												+ "\"let me help you,\" you say. \"i know this isn't what you really want to do.\"\n"
+												+ "he laughs, loud and unsettling.\n"
+												+ "\"how do you know? all i have to do is push a little button,\" he says.\n"
+												+ "\"and you, i, and all out the lovely people out there will go bye-bye!\"\n"
+												+ "his face contorts into some strange mimicry of sadness. \"and we wouldn't want\n"
+												+ "that, would we, dear " + Game.player.name +"?");
+										while(!Player.gameOver){
+											defaultMoves(player);
+											switch(dinoAct){
+											case "t":
+												//TODO PATH TALK-TALK-1-TALK-2-TALK
+												System.out.println("\n"
+														+ "\"what did they do to you?\" you ask, soft.\n"
+														+ "\"the kid smiles again but it's weak, eyes welling up with tears.\n"
+														+ "\"they -\" he points toward the door and, presumably, the people\n"
+														+ "beyond it. \"- didn't do anything. we were friends.\n"
+														+ "\"it was the goddamn company! i poured my heart, my soul into this\n"
+														+ "job, and they cast me away like nothing!\" at this point, he's really\n"
+														+ "crying, tears rolling down his cheeks as he wipes at them futilely.\n"
+														+ "\"they ruined my life and you can bet your ass i'm going to -\"\n"
+														+ "he sobs. \"- i'm going to ruin theirs too! they can't just...\n"
+														+ "they can't just call me in after four years of nothing but good work\n"
+														+ "and results and say 'oh, dino, by the way - you're fired!'\n"
+														+ "it doesn't fucking work that way, pledis!\"\n"
+														+ "\"uh-\" you start, when dino pulls a remote from his pocket, thumb\n"
+														+ "shaking over the big button in the middle.\n"
+														+ "\"wait!\" you yell, and he pauses.");
+												while(!Player.gameOver){
+													defaultMoves(player);
+													switch(dinoAct){
+													case "t":
+														System.out.println("\n"
+																+ "\"do you really want to do this?\" you ask. \"are you completely sure?\"\n"
+																+ "dino sniffles. \"no...\" he whispers.\n"
+																+ "\"don't all the innocent people here deserve better than that?\" you ask.\n"
+																+ "\"yes...\" he says. he hangs his head. \"i'm sorry...\" he mumbles.\n"
+																+ "he picks at the back of the remote with his nail, prying the cover off.\n"
+																+ "he flips a little switch and the clock stops.\n"
+																+ "\"tell them i'm sorry, will you?\" dino asks. at your nod, he leaves, slipping\n"
+																+ "quietly through a trapdoor in the floor.");
+														Player.gameOver = true; Player.gameWon = true;
+														break;
+													case "i":
+														Action.printInv(player);
+														if(player.inventory.isEmpty()){
+															System.out.println("\nyour inventory is empty.");
+															break;
+														}
+														System.out.println("\npick an item");
+														for(int i = 0;i<player.inventory.size();i++){
+															System.out.println((i+1) + ": "+ player.inventory.get(i).name);
+														}
+														dinoAct = Game.scan.nextLine();
+														player.existsIn(player.inventory);
+														if(!Action.exists){
+															System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
+														}
+														else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
+															System.out.println("\n"
+																	+ "the radio beeps once, twice, three times. dino looks up.\n"
+																	+ "\"who knows i'm here?\" he asks. he is strangely calm.\n"
+																	+ "\"woozi,\" you say. you save yourself the trouble of lying to him.\n"
+																	+ "dino laughs. \"so they hired you to find me, didn't they? well, here's what i\n"
+																	+ "say to that: woozi, come and get me yourself!\"\n"
+																	+ "dino laughs one last, manic laugh before pushing the button.");
+															player.inventory.remove(Player.radio);
+															Player.gameOver = true; Player.gameWon = false;
+										 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
+										 					System.out.println("\n"
+										 							+ "the drone whirs to life in your hand. it flies up over your head, and dino takes\n"
+										 							+ "hardly one glance at it before he presses the button and everyone and everything\n"
+										 							+ "goes bye-bye as promised.");
+										 					player.inventory.remove(Player.drone);
+										 					Player.gameOver = true; Player.gameWon = false;
+										 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
+										 					System.out.println("\n"
+										 							+ "you pull the diagram dk gave you from your pocket, smoothing it over your knee.\n"
+										 							+ "\"forget your lines?\" dino asks. you sputter."
+										 							+ "\"well, since i can see your obvious disregard for this production, i'll just cancel\n"
+										 							+ "it.\"\n"
+										 							+ "click. boom. bye-bye!");
+										 					player.inventory.remove(Player.diagram);
+										 					Player.gameOver = true; Player.gameWon = false;
+										 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
+										 					System.out.println("\n"
+										 							+ "you fiddle with the bracelet around your wrist. the soft threads whisper against\n"
+										 							+ "your skin, and dino looks up at it.\n"
+										 							+ "\"is that...\" he sniffles. \"is that seungkwan's?\"\n"
+										 							+ "you nod nervously. no point in lying to him.\n"
+										 							+ "dino backs up to the wall and slides down, resting his forehead on his knees.\n"
+										 							+ "he's crying again.\n"
+										 							+ "\"what am i doing?\" he whispers. \"they don't deserve this.\"\n"
+										 							+ "he looks down at the remote in his hand. he opens the back cover with his nail and\n"
+										 							+ "flips a little switch. the beeping stops.\n"
+										 							+ "you glance over, and the clock has stopped at " + player.bombTime + ".");
+										 					Player.gameOver = true; Player.gameWon = true;
+										 				}
+														break;
+													case "c": checkTime(player); break;
+													default: defaultChoice(player); break;
+													}
+												}
+												break;
+											case "i":
+												Action.printInv(player);
+												if(player.inventory.isEmpty()){
+													System.out.println("\nyour inventory is empty.");
+													break;
+												}
+												System.out.println("\npick an item");
+												for(int i = 0;i<player.inventory.size();i++){
+													System.out.println((i+1) + ": "+ player.inventory.get(i).name);
+												}
+												dinoAct = Game.scan.nextLine();
+												player.existsIn(player.inventory);
+												if(!Action.exists){
+													System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
+												}
+												else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
+													System.out.println("\n"
+															+ "the radio beeps once, twice, three times. the kid looks up.\n"
+															+ "\"who knows i'm here?\" he asks. he is strangely calm, fiddling with a little\n"
+															+ "remote, thumb ghosting over the button in the middle.\n"
+															+ "\"woozi,\" you say. you save yourself the trouble of lying to him.\n"
+															+ "the kid laughs. \"so they hired you to find me, didn't they? well, here's what i\n"
+															+ "say to that: woozi, come and get me yourself!\"\n"
+															+ "he laughs one last, manic laugh before pushing the button.");
+													player.inventory.remove(Player.radio);
+													Player.gameOver = true; Player.gameWon = false;
+								 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
+								 					System.out.println("\n"
+								 							+ "the drone whirs to life in your hand. it flies up over your head, and the kid takes\n"
+								 							+ "hardly one glance at it before he pulls out a little remote and presses the little red\n"
+								 							+ "button and everyone and everything goes bye-bye as promised.");
+								 					player.inventory.remove(Player.drone);
+								 					Player.gameOver = true; Player.gameWon = false;
+								 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
+								 					System.out.println("\n"
+								 							+ "you pull the diagram dk gave you from your pocket, smoothing it over your knee.\n"
+								 							+ "\"forget your lines?\" the kid asks. you sputter."
+								 							+ "\"well, since i can see your obvious disregard for this production, i'll just cancel\n"
+								 							+ "it.\"\n"
+								 							+ "click. boom. bye-bye, " + player.name + "!");
+								 					player.inventory.remove(Player.diagram);
+								 					Player.gameOver = true; Player.gameWon = false;
+								 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
+								 					System.out.println("\n"
+								 							+ "you fiddle with the bracelet around your wrist. the soft threads whisper against\n"
+										 					+ "your skin, and dino looks up at it.\n"
+										 					+ "\"is that...\" he asks. \"is that seungkwan's?\"\n"
+										 					+ "you nod nervously. no point in lying to him.\n"
+										 					+ "he laughs, pulling a little remote from his pocket. \"bye-bye, boo!\"\n"
+										 					+ "he presses the button.\n"
+										 					+ "you never even learned his name.");
+								 					player.inventory.remove(Player.bracelet);
+								 					Player.gameOver = true; Player.gameWon = false;
+								 				}
+												break;
+											case "c": checkTime(player); break;
+											default: defaultChoice(player); break;
+											}
+										}
+										break;
+									case "i":
+										Action.printInv(player);
+										if(player.inventory.isEmpty()){
+											System.out.println("\nyour inventory is empty.");
+											break;
+										}
+										System.out.println("\npick an item");
+										for(int i = 0;i<player.inventory.size();i++){
+											System.out.println((i+1) + ": "+ player.inventory.get(i).name);
+										}
+										dinoAct = Game.scan.nextLine();
+										player.existsIn(player.inventory);
+										if(!Action.exists){
+											System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
+										}
+										else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
+											System.out.println("\n"
+													+ "the radio beeps once, twice, three times. the kid looks up.\n"
+													+ "\"who knows i'm here?\" he asks. he is strangely calm, fiddling with a little\n"
+													+ "remote, thumb ghosting over the button in the middle.\n"
+													+ "\"woozi,\" you say. you save yourself the trouble of lying to him.\n"
+													+ "the kid laughs. \"so they hired you to find me, didn't they? well, here's what i\n"
+													+ "say to that: woozi, come and get me yourself!\"\n"
+													+ "he laughs one last, manic laugh before pushing the button. boom, boom.");
+											player.inventory.remove(Player.radio);
+											Player.gameOver = true; Player.gameWon = false;
+						 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
+						 					System.out.println("\n"
+						 							+ "the drone whirs to life in your hand. it flies up over your head, and the kid takes\n"
+						 							+ "hardly one glance at it before he pulls out a little remote and presses the little red\n"
+						 							+ "button and everyone and everything goes bye-bye - you, him, and everyone else in\n"
+						 							+ "the building.");
+						 					player.inventory.remove(Player.drone);
+						 					Player.gameOver = true; Player.gameWon = false;
+						 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
+						 					System.out.println("\n"
+						 							+ "you pull the diagram dk gave you from your pocket, smoothing it over your knee.\n"
+						 							+ "\"forget your lines?\" the kid asks. you sputter."
+						 							+ "\"well, since i can see your obvious disregard for this production, i'll just cancel\n"
+						 							+ "it.\"\n"
+						 							+ "click. boom. bye-bye, " + player.name + "!");
+						 					player.inventory.remove(Player.diagram);
+						 					Player.gameOver = true; Player.gameWon = false;
+						 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
+						 					System.out.println("\n"
+						 							+ "you fiddle with the bracelet around your wrist. the soft threads whisper against\n"
+								 					+ "your skin, and the kid looks up at it.\n"
+								 					+ "\"is that...\" he asks. \"is that seungkwan's?\"\n"
+								 					+ "you nod nervously. no point in lying to him.\n"
+								 					+ "he laughs, pulling a little remote from his pocket. \"bye-bye, boo!\"\n"
+								 					+ "he presses the button. boom, boom. you're gone.\n"
+								 					+ "you never even learned his name.");
+						 					player.inventory.remove(Player.bracelet);
+						 					Player.gameOver = true; Player.gameWon = false;
+						 				}
+										break;
+									case "c": checkTime(player); break;
+									default: defaultChoice(player); break;
+									}
+								}
 							}
 							else{
 								System.out.println("\nthat's not an option. be careful - you're running out of time.");
@@ -487,6 +715,7 @@ public class Dino {
 																						+ "\"tell them i'm sorry, will you?\" dino asks. at your nod, he leaves, slipping\n"
 																						+ "quietly through a trapdoor in the floor.");
 																				Player.gameOver = true; Player.gameWon = true;
+																				break;
 																			case "i":
 																				Action.printInv(player);
 																				if(player.inventory.isEmpty()){
@@ -932,6 +1161,7 @@ public class Dino {
 																						+ "\"tell them i'm sorry, will you?\" dino asks. at your nod, he leaves, slipping\n"
 																						+ "quietly through a trapdoor in the floor.");
 																				Player.gameOver = true; Player.gameWon = true;
+																				break;
 																			case "i":
 																				Action.printInv(player);
 																				if(player.inventory.isEmpty()){
@@ -1126,7 +1356,234 @@ public class Dino {
 														+ "\"i don't need help,\" he spits. \"just leave.\"\n"
 														+ "venom laces his words. perhaps it's spite at your request to help.\n"
 														+ "you don't know.");
+												while(!Player.gameOver) {
 												defaultMoves(player);
+												switch(dinoAct) {
+												case "t":
+													System.out.println("\n"
+															+ "\"let me help you,\" you say. \"i know this isn't what you really want to do.\"\n"
+															+ "he laughs, loud and unsettling.\n"
+															+ "\"how do you know? all i have to do is push a little button,\" he says.\n"
+															+ "\"and you, i, and all out the lovely people out there will go bye-bye!\"\n"
+															+ "his face contorts into some strange mimicry of sadness. \"and we wouldn't want\n"
+															+ "that, would we, dear " + Game.player.name +"?");
+													while(!Player.gameOver){
+														defaultMoves(player);
+														switch(dinoAct){
+														case "t":
+															//TODO PATH TALK-TALK-1-TALK-2-TALK
+															System.out.println("\n"
+																	+ "\"what did they do to you?\" you ask, soft.\n"
+																	+ "\"the kid smiles again but it's weak, eyes welling up with tears.\n"
+																	+ "\"they -\" he points toward the door and, presumably, the people\n"
+																	+ "beyond it. \"- didn't do anything. we were friends.\n"
+																	+ "\"it was the goddamn company! i poured my heart, my soul into this\n"
+																	+ "job, and they cast me away like nothing!\" at this point, he's really\n"
+																	+ "crying, tears rolling down his cheeks as he wipes at them futilely.\n"
+																	+ "\"they ruined my life and you can bet your ass i'm going to -\"\n"
+																	+ "he sobs. \"- i'm going to ruin theirs too! they can't just...\n"
+																	+ "they can't just call me in after four years of nothing but good work\n"
+																	+ "and results and say 'oh, dino, by the way - you're fired!'\n"
+																	+ "it doesn't fucking work that way, pledis!\"\n"
+																	+ "\"uh-\" you start, when dino pulls a remote from his pocket, thumb\n"
+																	+ "shaking over the big button in the middle.\n"
+																	+ "\"wait!\" you yell, and he pauses.");
+															while(!Player.gameOver){
+																defaultMoves(player);
+																switch(dinoAct){
+																case "t":
+																	System.out.println("\n"
+																			+ "\"do you really want to do this?\" you ask. \"are you completely sure?\"\n"
+																			+ "dino sniffles. \"no...\" he whispers.\n"
+																			+ "\"don't all the innocent people here deserve better than that?\" you ask.\n"
+																			+ "\"yes...\" he says. he hangs his head. \"i'm sorry...\" he mumbles.\n"
+																			+ "he picks at the back of the remote with his nail, prying the cover off.\n"
+																			+ "he flips a little switch and the clock stops.\n"
+																			+ "\"tell them i'm sorry, will you?\" dino asks. at your nod, he leaves, slipping\n"
+																			+ "quietly through a trapdoor in the floor.");
+																	Player.gameOver = true; Player.gameWon = true;
+																	break;
+																case "i":
+																	Action.printInv(player);
+																	if(player.inventory.isEmpty()){
+																		System.out.println("\nyour inventory is empty.");
+																		break;
+																	}
+																	System.out.println("\npick an item");
+																	for(int i = 0;i<player.inventory.size();i++){
+																		System.out.println((i+1) + ": "+ player.inventory.get(i).name);
+																	}
+																	dinoAct = Game.scan.nextLine();
+																	player.existsIn(player.inventory);
+																	if(!Action.exists){
+																		System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
+																	}
+																	else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
+																		System.out.println("\n"
+																				+ "the radio beeps once, twice, three times. dino looks up.\n"
+																				+ "\"who knows i'm here?\" he asks. he is strangely calm.\n"
+																				+ "\"woozi,\" you say. you save yourself the trouble of lying to him.\n"
+																				+ "dino laughs. \"so they hired you to find me, didn't they? well, here's what i\n"
+																				+ "say to that: woozi, come and get me yourself!\"\n"
+																				+ "dino laughs one last, manic laugh before pushing the button.");
+																		player.inventory.remove(Player.radio);
+																		Player.gameOver = true; Player.gameWon = false;
+													 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
+													 					System.out.println("\n"
+													 							+ "the drone whirs to life in your hand. it flies up over your head, and dino takes\n"
+													 							+ "hardly one glance at it before he presses the button and everyone and everything\n"
+													 							+ "goes bye-bye as promised.");
+													 					player.inventory.remove(Player.drone);
+													 					Player.gameOver = true; Player.gameWon = false;
+													 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
+													 					System.out.println("\n"
+													 							+ "you pull the diagram dk gave you from your pocket, smoothing it over your knee.\n"
+													 							+ "\"forget your lines?\" dino asks. you sputter."
+													 							+ "\"well, since i can see your obvious disregard for this production, i'll just cancel\n"
+													 							+ "it.\"\n"
+													 							+ "click. boom. bye-bye!");
+													 					player.inventory.remove(Player.diagram);
+													 					Player.gameOver = true; Player.gameWon = false;
+													 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
+													 					System.out.println("\n"
+													 							+ "you fiddle with the bracelet around your wrist. the soft threads whisper against\n"
+													 							+ "your skin, and dino looks up at it.\n"
+													 							+ "\"is that...\" he sniffles. \"is that seungkwan's?\"\n"
+													 							+ "you nod nervously. no point in lying to him.\n"
+													 							+ "dino backs up to the wall and slides down, resting his forehead on his knees.\n"
+													 							+ "he's crying again.\n"
+													 							+ "\"what am i doing?\" he whispers. \"they don't deserve this.\"\n"
+													 							+ "he looks down at the remote in his hand. he opens the back cover with his nail and\n"
+													 							+ "flips a little switch. the beeping stops.\n"
+													 							+ "you glance over, and the clock has stopped at " + player.bombTime + ".");
+													 					Player.gameOver = true; Player.gameWon = true;
+													 				}
+																	break;
+																case "c": checkTime(player); break;
+																default: defaultChoice(player); break;
+																}
+															}
+															break;
+														case "i":
+															Action.printInv(player);
+															if(player.inventory.isEmpty()){
+																System.out.println("\nyour inventory is empty.");
+																break;
+															}
+															System.out.println("\npick an item");
+															for(int i = 0;i<player.inventory.size();i++){
+																System.out.println((i+1) + ": "+ player.inventory.get(i).name);
+															}
+															dinoAct = Game.scan.nextLine();
+															player.existsIn(player.inventory);
+															if(!Action.exists){
+																System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
+															}
+															else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
+																System.out.println("\n"
+																		+ "the radio beeps once, twice, three times. the kid looks up.\n"
+																		+ "\"who knows i'm here?\" he asks. he is strangely calm, fiddling with a little\n"
+																		+ "remote, thumb ghosting over the button in the middle.\n"
+																		+ "\"woozi,\" you say. you save yourself the trouble of lying to him.\n"
+																		+ "the kid laughs. \"so they hired you to find me, didn't they? well, here's what i\n"
+																		+ "say to that: woozi, come and get me yourself!\"\n"
+																		+ "he laughs one last, manic laugh before pushing the button.");
+																player.inventory.remove(Player.radio);
+																Player.gameOver = true; Player.gameWon = false;
+											 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
+											 					System.out.println("\n"
+											 							+ "the drone whirs to life in your hand. it flies up over your head, and the kid takes\n"
+											 							+ "hardly one glance at it before he pulls out a little remote and presses the little red\n"
+											 							+ "button and everyone and everything goes bye-bye as promised.");
+											 					player.inventory.remove(Player.drone);
+											 					Player.gameOver = true; Player.gameWon = false;
+											 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
+											 					System.out.println("\n"
+											 							+ "you pull the diagram dk gave you from your pocket, smoothing it over your knee.\n"
+											 							+ "\"forget your lines?\" the kid asks. you sputter."
+											 							+ "\"well, since i can see your obvious disregard for this production, i'll just cancel\n"
+											 							+ "it.\"\n"
+											 							+ "click. boom. bye-bye, " + player.name + "!");
+											 					player.inventory.remove(Player.diagram);
+											 					Player.gameOver = true; Player.gameWon = false;
+											 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
+											 					System.out.println("\n"
+											 							+ "you fiddle with the bracelet around your wrist. the soft threads whisper against\n"
+													 					+ "your skin, and dino looks up at it.\n"
+													 					+ "\"is that...\" he asks. \"is that seungkwan's?\"\n"
+													 					+ "you nod nervously. no point in lying to him.\n"
+													 					+ "he laughs, pulling a little remote from his pocket. \"bye-bye, boo!\"\n"
+													 					+ "he presses the button.\n"
+													 					+ "you never even learned his name.");
+											 					player.inventory.remove(Player.bracelet);
+											 					Player.gameOver = true; Player.gameWon = false;
+											 				}
+															break;
+														case "c": checkTime(player); break;
+														default: defaultChoice(player); break;
+														}
+													}
+													break;
+												case "i":
+													Action.printInv(player);
+													if(player.inventory.isEmpty()){
+														System.out.println("\nyour inventory is empty.");
+														break;
+													}
+													System.out.println("\npick an item");
+													for(int i = 0;i<player.inventory.size();i++){
+														System.out.println((i+1) + ": "+ player.inventory.get(i).name);
+													}
+													dinoAct = Game.scan.nextLine();
+													player.existsIn(player.inventory);
+													if(!Action.exists){
+														System.out.println("\nthat's not an option right now. be more careful -\nyou're losing time.");
+													}
+													else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.radio)){
+														System.out.println("\n"
+																+ "the radio beeps once, twice, three times. the kid looks up.\n"
+																+ "\"who knows i'm here?\" he asks. he is strangely calm, fiddling with a little\n"
+																+ "remote, thumb ghosting over the button in the middle.\n"
+																+ "\"woozi,\" you say. you save yourself the trouble of lying to him.\n"
+																+ "the kid laughs. \"so they hired you to find me, didn't they? well, here's what i\n"
+																+ "say to that: woozi, come and get me yourself!\"\n"
+																+ "he laughs one last, manic laugh before pushing the button. boom, boom.");
+														player.inventory.remove(Player.radio);
+														Player.gameOver = true; Player.gameWon = false;
+									 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.drone)){
+									 					System.out.println("\n"
+									 							+ "the drone whirs to life in your hand. it flies up over your head, and the kid takes\n"
+									 							+ "hardly one glance at it before he pulls out a little remote and presses the little red\n"
+									 							+ "button and everyone and everything goes bye-bye - you, him, and everyone else in\n"
+									 							+ "the building.");
+									 					player.inventory.remove(Player.drone);
+									 					Player.gameOver = true; Player.gameWon = false;
+									 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.diagram)){
+									 					System.out.println("\n"
+									 							+ "you pull the diagram dk gave you from your pocket, smoothing it over your knee.\n"
+									 							+ "\"forget your lines?\" the kid asks. you sputter."
+									 							+ "\"well, since i can see your obvious disregard for this production, i'll just cancel\n"
+									 							+ "it.\"\n"
+									 							+ "click. boom. bye-bye, " + player.name + "!");
+									 					player.inventory.remove(Player.diagram);
+									 					Player.gameOver = true; Player.gameWon = false;
+									 				}else if(player.inventory.get(Integer.parseInt(dinoAct)-1).equals(Player.bracelet)){
+									 					System.out.println("\n"
+									 							+ "you fiddle with the bracelet around your wrist. the soft threads whisper against\n"
+											 					+ "your skin, and the kid looks up at it.\n"
+											 					+ "\"is that...\" he asks. \"is that seungkwan's?\"\n"
+											 					+ "you nod nervously. no point in lying to him.\n"
+											 					+ "he laughs, pulling a little remote from his pocket. \"bye-bye, boo!\"\n"
+											 					+ "he presses the button. boom, boom. you're gone.\n"
+											 					+ "you never even learned his name.");
+									 					player.inventory.remove(Player.bracelet);
+									 					Player.gameOver = true; Player.gameWon = false;
+									 				}
+													break;
+												case "c": checkTime(player); break;
+												default: defaultChoice(player); break;
+												}
+											}
 											}
 											else{
 												System.out.println("\nthat's not an option. be careful - you're running out of time.");

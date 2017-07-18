@@ -54,7 +54,7 @@ public class Line {
 			+ "\"hi!\" he exclaims. \"what's your name?\"\n"
 			+ "you laugh a little. who has this much energy, ever?\n"
 			+ "\"i'm " + Game.player.name + ",\" you respond. \"what's yours?\"\n"
-			+ "the boy's smile grows, if that's possible. \"i'm seungkwan! i just kind\n"
+			+ "the boy's smile grows, if that's possible. \"i'm boo seungkwan! i just kind\n"
 			+ "of live here. s. coups has been taking care of me since i was, like, three.\n"
 			+ "technically, though, i work in advertising. we don't even have anything to\n"
 			+ "advertise! we don't sell anything!\" he says.\n"
